@@ -1,0 +1,16 @@
+$red: #E64415;
+$gray: #9E9E9E;
+$fz_large: 45px;
+$fz_medium: 18px;
+$fz_small : 16px;
+$font-stack : ('Montserrat', sans-serif);
+$fw_ExtraBold : 900;
+$fw_SemiBold : 600;
+$fw_Regular  : 400;
+$breakpoints: (
+  'xsmall':320px,           // XSmall devices (portrait phones, 320px and up)
+  'small': 576px,           // Small devices (landscape phones, 576px and up)
+  'medium': 768px,          // Medium devices (tablets, 768px and up)
+  'large': 992px,           // Large devices (desktops, 992px and up)
+  'xlarge': 1200px,          // Extra large devices (large desktops, 1200px and up)
+);

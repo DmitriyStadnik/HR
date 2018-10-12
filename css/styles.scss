@@ -1,0 +1,587 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "animations.scss","utils.scss";
+
+*  { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent!important;
+    outline: none;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+body {
+    font-family: $font-stack;
+}
+h1 {
+    font-size: $fz_large;
+    font-weight: $fw_ExtraBold;
+    line-height: 70px;
+    margin-bottom: 50px;
+    @include respond-to (small) {
+        font-size: 22px;
+        text-align: center;
+        line-height: 35px;
+    }
+}
+
+.pill_button {
+    text-decoration: none;
+    font-size: $fz_medium;
+    font-weight: $fw_SemiBold;
+    border-radius: 28px;
+    padding: 14px 35px 14px 35px;
+    @include transition(0.2s);
+    cursor: pointer;
+    @include respond-to(small) {
+        padding: 11px 30px 11px 30px;
+    }
+}
+
+.pill_button--solid {
+    color: #fff;
+    background: $red;
+    border : 2px solid transparent;
+    &:hover {
+        color: $red;
+        background: #fff;
+        border : 2px solid $red;
+    }
+}
+
+.pill_button--light {
+    color: $red;
+    background: #fff;
+    border: 2px solid $red;
+    &:hover {
+        color: #fff;
+        background: $red;
+        border : 2px solid transparent;
+    }
+
+}
+
+.gray-text {
+    font-size: $fz_small;
+    color: $gray;
+    font-weight: $fw_Regular;
+    line-height: 25px;
+    @include respond-to (small) {
+        text-align: center;
+    }
+}
+
+.header {
+    animation-name: dropFromTop;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffffff7;
+    @include respond-to (small) {
+        height: 68px;
+    }
+    .header_link {
+        font-size: $fz_small;
+        font-weight: $fw_SemiBold;
+        text-decoration: none;
+        color: #000;
+            &:hover {
+                color: $red;
+                @include transition(0.2s);
+            }
+    }
+       
+    .header__rightblock {
+        height: 100%;
+        padding-right: 5.208333333333334vw;
+        justify-content: space-between;
+        .header__icon--mobile {
+            font-size: 20px;
+            margin-right: 5.333333vw;
+            &:nth-child(2) {
+                margin-right: 0;
+            }
+        }
+        .header_link {
+            margin-right: 20px;
+        }
+
+    }
+
+    .header__leftblock {
+        height: 100%;
+        padding-left: 5.208333333333334vw;
+        .header__icon--mobile {
+            font-size: 20px;
+            margin-right: 5.333333vw;
+            &:nth-child(2) {
+                margin-right: 0;
+            }
+        }
+        .header__location {
+            text-decoration: underline;
+            margin-right: 55px;
+        }
+
+        .header__call {
+            text-decoration: none;
+        }
+        .header__logo {
+            width: 200px;
+            margin-right: 55px;
+            @include respond-to (small) {
+                width: 38.4vw;
+                height: auto;
+                margin-left: 16.5333333333vw;
+                margin-right: 0;
+            }
+        }
+
+    }
+}
+
+.main {
+    margin-top: 200px;
+    @include mx(5.208333333333334vw);
+    @include respond-to (small) {
+        margin-top: 130px;
+    }
+    .section {
+        @include py(300px);
+        @include respond-to(small) {
+            @include py(100px);
+            flex-direction: column;
+        }
+        .side__img {
+            width: 50vw;
+            height: 65vh;
+            @include respond-to(small) {
+                height: unset;
+                margin-top: 30px;
+                padding-left: 15%;
+            }
+        }
+    }
+    .intro {
+        display: flex;
+        align-items: center;
+        @include respond-to (small) {
+            flex-direction: column;
+        }
+        .intro__leftside{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 100px;
+            width: 100%;
+            @include respond-to (small) {
+                margin-right: 0;
+            }
+            @include respond-to(small) {        
+                h1 {order: 0;}
+                .intro__jobs-needed {order: 1;}
+                .intro__buttons {order: 2;}
+                .intro__crutch {
+                    order:3;
+                    display: flex;
+                    flex-direction: column;
+                    .crutch__img {
+                        width: 100vw;
+                        margin-bottom: 50px;
+                    }
+                    .crutch__btn {
+                        width: 100%;
+                        background:$red;
+                        font-size: $fz_small;
+                        font-weight: $fw_SemiBold;
+                        color: #fff;
+                        text-decoration: none;
+                        text-align: center;
+                        @include py(15px);
+                        position: fixed;
+                        bottom: 0;
+                        z-index: 1;
+                    }
+                }
+                .gray-text {order: 4;}
+                .intro__top-slider{order: 5;}
+            }
+            .gray-text {
+                margin-bottom: 30px;
+            }
+            .intro__jobs-needed {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                @include respond-to(small) {
+                    flex-direction: column;
+                }
+                .mobile__topside, .mobile__botside {
+                    display: flex;
+                    @include respond-to(small) {
+                        @include my(5px);
+                    }
+                }
+                .jobs-needed__text {
+                    font-size: $fz_medium;
+                    font-weight: $fw_SemiBold;
+                    @include mx(10px);
+                }
+                a {
+                    font-size: $fz_medium;
+                    font-weight: $fw_SemiBold;
+                    color: $red;
+                    text-decoration: none;
+                }
+            }
+            .intro__buttons {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                @include respond-to(small) {
+                    justify-content: center;
+                }
+                .pill_button:nth-child(1){
+                    margin-right: 30px;
+                    @include respond-to (small) {
+                        margin-right: 0;
+                    }
+                }
+                margin-bottom: 50px;
+            }
+            .intro__top-slider {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .top-slider__slider-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    .slider-header__text {
+                        font-size: $fz_medium;
+                        font-weight: $fw_SemiBold;
+                        color: $gray;
+                    }
+                    .slider-header__arrows {
+                        .slider__arrow {
+                            padding: 20px;
+                            text-decoration: none;
+                            font-size: 20px;
+                            color: $gray;
+                            cursor: pointer;
+                            &:hover {
+                                color: $red;
+                                @include transition (0.4s);
+                            }
+                        }
+                    }
+                }
+                .top-slider__tiles{
+                    display: flex;
+                    max-width:38.9453125vw;
+                    @include respond-to(small) {
+                        max-width: 100vw;
+                    }    
+                    .top-slider__tile {
+                        width: 33%;
+                        border-radius: 3px;
+                        padding: 20px;
+                        @include my(15px);
+                        @include mx(5px);
+                        @include shadow ();
+                        @include respond-to (small) {
+                            margin-top: 10px;
+                            margin-bottom: 30px;
+                            padding: 10px;
+                            width: unset;
+                            max-width: 40vw;
+                        }
+                        @include respond-to (xsmall) {
+                            max-width: 44vw;
+                        }
+                        a {
+                            text-decoration: none;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .tile__city , .tile__date {
+                            font-size: $fz_small;
+                            font-weight: $fw_Regular;
+                            color: $gray;
+                        }
+                        .tile__position {
+                            font-size: $fz_medium;
+                            font-weight: $fw_SemiBold;
+                            max-width: 8.28125vw;
+                            color: #000;
+                            @include my(10px);
+                            @include respond-to(small) {
+                                max-width: 100%;
+                            }
+                        }                
+                    }
+                }
+            }
+        }
+        .intro__rightside {
+            @include respond-to(small) {
+                display: none;
+            }
+            .intro__img {
+                width: 50vw;
+            }
+        }
+    }
+    .foxtrot-is {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include respond-to(small) {
+            flex-direction: column;
+        }
+        .foxtrot-is__leftside {
+            display: flex;
+            flex-direction: column;   
+            margin-right: 100px;
+            @include respond-to (small) {
+                margin-right: 0;
+                align-items: center;
+            }
+            .gray-text {
+                margin-bottom: 20px;
+            }
+            .foxtrot-is__visitus-btn {
+                width: max-content;
+                margin-top: 30px;
+            }
+        }
+        .foxtrot-is__rightside {
+            position: relative;
+        }
+    }
+    .opportunities {
+        display: flex;
+        align-items: center;
+        .opportunities__leftside {
+            display: flex;
+            flex-direction: column;
+            margin-right: 100px;
+            @include respond-to (small) {
+                margin-right: 0;
+                align-items: center;
+            }
+            .gray-text {
+                margin-bottom: 50px;
+            }
+            .pill_button {
+                width: max-content;
+            }
+        }
+        .opportunities__rightside {
+            .opportunities__img {
+                width: 50vw;
+            }
+        }
+    }
+    .foxtrot-jobs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .foxtrot-jobs__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 100px;
+            @include respond-to(small) {
+                width: 85vw;
+            }
+            .foxtrot-jobs__btn {
+                font-size: $fz_medium;
+                font-weight: $fw_SemiBold;
+                text-decoration: none;
+                padding: 14px 54px 14px 54px;
+                width: 50%;
+                border: 2px solid $red;
+                color: $red;
+                background: #fff;
+                min-width: 2.96875vw;
+                text-align: center;
+                @include respond-to(small) {
+                    padding: 11px 25px 11px 25px;
+                }
+            }
+            .foxtrot-jobs__btn--left {
+                border-radius: 33px 0px 0px 33px;
+                border-right-width: 0;
+            }
+            .foxtrot-jobs__btn--right {
+                border-radius: 0px 33px 33px 0px;
+                border-left-width: 0;
+            }
+            .foxtrot-jobs__btn--active {
+                background: $red;
+                color: #fff;
+            }
+        }
+        .foxtrot-jobs__professions {
+            display: flex;
+            align-items: center;
+            .profession-tile {
+                width: 350px;
+                @include mx(50px);
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .profession-tile__img {                
+                        max-width: 7.63541667vw;            
+                    }
+                    .profession-tile__title {
+                        @include my(30px);
+                        font-size: 20px;
+                        font-weight:$fw_ExtraBold;
+                        color: #000;
+                    }
+                    .profession-tile__text {
+                        font-size: $fz_small;
+                        font-weight: $fw_Regular;
+                        color: $gray;
+                    }
+                }
+
+            }
+        }
+
+    }
+    .work-and-study {
+        display: flex;
+        align-items: center;
+        .work-and-study__rightside {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            @include respond-to (small) {
+                align-items: center;
+            }
+            .gray-text {
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .success {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .success__frames {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            .success-frame {
+                display: flex;
+                @include mx(25px);
+                .success-frame__leftside {
+                    margin-right: 30px;
+                    .success-frame__img {
+                        max-width: 12.03125vw;
+                        height: 100%
+                    }
+                }
+                .success-frame__rightside {
+                    display: flex;
+                    flex-direction: column;
+                    .success-frame__name {
+                        color: $red;
+                        font-size: 20px;
+                        font-weight: $fw_ExtraBold;
+                        margin-bottom: 10px;
+                    }
+                    .success-frame__age {
+                        font-size: $fz_small;
+                        font-weight: $fw_Regular;
+                        color: $gray;
+                        margin-bottom: 20px;
+                    }
+                    .success-frame__occupation {
+                        font-size: $fz_medium;
+                        font-weight: $fw_SemiBold;
+                        color: #000000;
+                        margin-bottom: 15px;
+                    }
+                    .success-frame__text {
+                        color: $gray;
+                        font-size: $fz_medium;
+                        font-weight: $fw_Regular;
+                        margin-bottom: 50px;
+                    }
+                    .pill_button {
+                        width: max-content;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .call-to-action {
+            color: $red;
+            @include respond-to(small) {
+                margin-bottom: 20px;
+            }
+        }
+        .bottom__img {
+            width: 30vw;
+            margin-top: 100px;
+            @include respond-to (small) {
+                width: 100vw;
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   .footer__logo {
+       width: 10.4166666667vw;
+       margin-bottom: 50px;
+       @include respond-to(small) {
+           width: 41.333vw;
+       }
+   }
+   .footer__links {
+       margin: 50px;
+       @include respond-to(small) {
+           @include mx(15px);
+           margin-bottom: 90px;
+       }
+       .footer__link {
+           text-decoration: underline;
+           color: $red;
+           font-size: $fz_small;
+           font-weight: $fw_SemiBold;
+           @include mx(25px);
+           @include respond-to(small) {
+               @include mx(5px);
+           }
+       }
+   }
+}
+
