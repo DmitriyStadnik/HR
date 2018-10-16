@@ -204,6 +204,7 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: #fffffff7;
+  z-index: 1;
 }
 
 @media (max-width: 576px) {
@@ -296,6 +297,7 @@ h1 {
 }
 
 .main .section {
+  width: 100%;
   padding-top: 300px;
   padding-bottom: 300px;
 }
@@ -319,6 +321,7 @@ h1 {
 @media (max-width: 576px) {
   .main .section .side__img {
     height: unset;
+    width: 100vw;
     margin-top: 30px;
     padding-left: 15%;
   }
@@ -684,6 +687,21 @@ h1 {
   position: relative;
 }
 
+.main .foxtrot-is .foxtrot-is__rightside .foxtrot-is__extratext {
+  position: absolute;
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: 20px 10px 20px rgba(247, 127, 72, 0.15);
+  color: #E64415;
+  left: 40%;
+}
+
+@media (max-width: 576px) {
+  .main .foxtrot-is .foxtrot-is__rightside .foxtrot-is__extratext {
+    font-size: 18px;
+  }
+}
+
 .main .opportunities {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -805,10 +823,29 @@ h1 {
           align-items: center;
 }
 
+@media (max-width: 576px) {
+  .main .foxtrot-jobs .foxtrot-jobs__professions {
+    max-width: 100vw;
+  }
+}
+
 .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile {
-  width: 350px;
+  width: 100%;
   margin-left: 50px;
   margin-right: 50px;
+}
+
+@media (max-width: 576px) {
+  .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    position: relative;
+  }
 }
 
 .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a {
@@ -829,6 +866,12 @@ h1 {
   max-width: 7.63541667vw;
 }
 
+@media (max-width: 576px) {
+  .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__img {
+    max-width: 66.666667vw;
+  }
+}
+
 .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__title {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -837,10 +880,24 @@ h1 {
   color: #000;
 }
 
+@media (max-width: 576px) {
+  .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #E64415;
+  }
+}
+
 .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__text {
   font-size: 16px;
   font-weight: 400;
   color: #9E9E9E;
+}
+
+@media (max-width: 576px) {
+  .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__text {
+    text-align: center;
+  }
 }
 
 .main .work-and-study {
@@ -908,13 +965,10 @@ h1 {
   margin-right: 25px;
 }
 
-.main .success .success__frames .success-frame .success-frame__leftside {
-  margin-right: 30px;
-}
-
 .main .success .success__frames .success-frame .success-frame__leftside .success-frame__img {
   max-width: 12.03125vw;
   height: 100%;
+  margin-right: 30px;
 }
 
 .main .success .success__frames .success-frame .success-frame__rightside {
