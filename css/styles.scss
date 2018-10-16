@@ -530,6 +530,7 @@ h1 {
             margin-top: 50px;
             display: flex;
             align-items: center;
+            width: 100%;
             .success-frame {
                 display: flex;
                 @include mx(25px);
