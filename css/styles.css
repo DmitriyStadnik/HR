@@ -821,6 +821,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 100%;
 }
 
 @media (max-width: 576px) {
@@ -830,7 +831,6 @@ h1 {
 }
 
 .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile {
-  width: 100%;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -892,6 +892,7 @@ h1 {
   font-size: 16px;
   font-weight: 400;
   color: #9E9E9E;
+  text-align: center;
 }
 
 @media (max-width: 576px) {

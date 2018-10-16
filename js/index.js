@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('.top-slider__tiles').slick({
         infinite:true,
-        slidesToShow:5,
+        slidesToShow:3,
         slidesToScroll:2,
         prevArrow: $('.slider__arrow--prev'),
         nextArrow: $('.slider__arrow--next'),
@@ -12,7 +12,6 @@ $(document).ready(function(){
                 settings:{
                     slidesToShow: 2,
                     variableWidth: true,
-
                 }
             },
         ]
@@ -20,7 +19,7 @@ $(document).ready(function(){
 
     $('.foxtrot-jobs__professions').not('.slick-initialized').slick({
         infinite:true,
-        slidesToShow:1,
+        slidesToShow:5,
         slidesToScroll:1,
         responsive : [
             {
