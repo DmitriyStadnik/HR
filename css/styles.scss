@@ -102,7 +102,22 @@ h1 {
                 @include transition(0.2s);
             }
     }
-       
+    .sidebar__toggler {
+        .mb0--open {
+            transform: translateY(5px) rotate(45deg);
+            width: 25px !important;
+          
+          }
+          
+          .mb1--open {
+            opacity: 0;
+          }
+          
+          .mb2--open {
+            transform: translateY(-7px) rotate(-45deg);
+            width: 25px !important;
+          }
+    }
     .header__rightblock {
         height: 100%;
         padding-right: 5.208333333333334vw;
@@ -176,19 +191,42 @@ h1 {
 .sidebar {
     @include transition(0.4s);
     width: 0;
-    opacity: 0.3;
+    opacity: 0.7;
     overflow: hidden;
     position: fixed;
     top: 68px;
     height: 100vh;
-    background: #fff;
+    padding-top: 40px;  
+    padding-left: 20px;
+    .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .sidebar__link {
+            color: #000;
+            text-decoration: none;
+            font-size: $fz_small;
+            font-weight: $fw_SemiBold;
+            white-space: nowrap;
+            margin-bottom: 20px;
+            &:hover {
+                color: $red;
+                text-decoration: none;
+                @include transition(0.4s);
+            }
+        }
+    }
 }
 
 .sidebar--open {
     width: 100vw;
     z-index: 2;
     opacity: 1;
+    background: #fff;
+
 }
+
+
 
 
 .main {
@@ -629,7 +667,7 @@ h1 {
             width: 30vw;
             margin-top: 100px;
             @include respond-to (small) {
-                width: 100vw;
+                width: 90vw;
             }
         }
     }

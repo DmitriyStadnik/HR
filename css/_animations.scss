@@ -32,18 +32,3 @@
         transform: translateY(0);
      }
 }
-
-.mb0--open {
-  transform: translateY(5px) rotate(45deg);
-  width: 25px !important;
-
-}
-
-.mb1--open {
-  opacity: 0;
-}
-
-.mb2--open {
-  transform: translateY(-7px) rotate(-45deg);
-  width: 25px !important;
-}
