@@ -771,7 +771,7 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 576px) {
@@ -812,6 +812,14 @@ h1 {
 .main .foxtrot-jobs .foxtrot-jobs__buttons .foxtrot-jobs__btn--active {
   background: #E64415;
   color: #fff;
+}
+
+.main .foxtrot-jobs .foxtrot-jobs__show-all {
+  margin-bottom: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #E64415;
 }
 
 .main .foxtrot-jobs .foxtrot-jobs__professions {
@@ -967,12 +975,6 @@ h1 {
   margin-right: 25px;
 }
 
-.main .success .success__frames .success-frame .success-frame__leftside .success-frame__img {
-  max-width: 12.03125vw;
-  height: 100%;
-  margin-right: 30px;
-}
-
 .main .success .success__frames .success-frame .success-frame__rightside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -981,6 +983,7 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 25px;
 }
 
 .main .success .success__frames .success-frame .success-frame__rightside .success-frame__name {
@@ -1008,7 +1011,7 @@ h1 {
   color: #9E9E9E;
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .main .success .success__frames .success-frame .success-frame__rightside .pill_button {

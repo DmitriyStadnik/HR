@@ -420,7 +420,7 @@ h1 {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 100px;
+            margin-bottom: 20px;
             @include respond-to(small) {
                 width: 85vw;
             }
@@ -451,6 +451,13 @@ h1 {
                 background: $red;
                 color: #fff;
             }
+        }
+        .foxtrot-jobs__show-all {
+            margin-bottom: 60px;
+            font-size: $fz_small;
+            font-weight: $fw_SemiBold;
+            text-decoration: underline;
+            color: $red;
         }
         .foxtrot-jobs__professions {
             display: flex;
@@ -534,16 +541,10 @@ h1 {
             .success-frame {
                 display: flex;
                 @include mx(25px);
-                .success-frame__leftside {
-                    .success-frame__img {
-                        max-width: 12.03125vw;
-                        height: 100%;
-                        margin-right: 30px;
-                    }
-                }
                 .success-frame__rightside {
                     display: flex;
                     flex-direction: column;
+                    margin-left: 25px;
                     .success-frame__name {
                         color: $red;
                         font-size: 20px;
@@ -566,7 +567,7 @@ h1 {
                         color: $gray;
                         font-size: $fz_medium;
                         font-weight: $fw_Regular;
-                        margin-bottom: 50px;
+                        margin-bottom: 25px;
                     }
                     .pill_button {
                         width: max-content;
