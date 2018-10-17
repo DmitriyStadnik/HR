@@ -92,7 +92,7 @@ h1 {
     @include respond-to (small) {
         height: 68px;
     }
-    .header_link {
+    .header_link, .sidebar__toggler {
         font-size: $fz_small;
         font-weight: $fw_SemiBold;
         text-decoration: none;
@@ -123,9 +123,30 @@ h1 {
     .header__leftblock {
         height: 100%;
         padding-left: 5.208333333333334vw;
+        .sidebar__toggler {
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            height: 18px;
+            width: 22px;
+            justify-content: space-around;
+            @include respond-from (small) {
+                display: none;
+            }
+            .menu-bar {
+                position: relative;
+                display: block;
+                width: 18px;
+                height: 2px;
+                background-color: #444;
+                float: left;
+                transform-origin: center center;
+                @include transition(0.4s);
+            }
+        }
         .header__icon--mobile {
             font-size: 20px;
-            margin-right: 5.333333vw;
+            margin-right: 3vw;
             &:nth-child(2) {
                 margin-right: 0;
             }
@@ -151,6 +172,24 @@ h1 {
 
     }
 }
+
+.sidebar {
+    @include transition(0.4s);
+    width: 0;
+    opacity: 0.3;
+    overflow: hidden;
+    position: fixed;
+    top: 68px;
+    height: 100vh;
+    background: #fff;
+}
+
+.sidebar--open {
+    width: 100vw;
+    z-index: 2;
+    opacity: 1;
+}
+
 
 .main {
     margin-top: 200px;
