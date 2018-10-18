@@ -224,8 +224,8 @@ h1 {
 
 .header .header_link:hover, .header .sidebar__toggler:hover {
   color: #E64415;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .header .sidebar__toggler .mb0--open {

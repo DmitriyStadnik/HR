@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.top-slider__tiles').slick({
         infinite:true,
-        slidesToShow:3,
+        slidesToShow:4,
         slidesToScroll:2,
         prevArrow: $('.slider__arrow--prev'),
         nextArrow: $('.slider__arrow--next'),
@@ -69,7 +69,8 @@ $(document).ready(function(){
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).addClass('mb'+i+'--open');
             }
-            $('.header').css('background', '#fff');
+            $('.header' ).css('background', '#fff');
+            $(this).css('transform','rotateY(720deg)');
         }
     })
 

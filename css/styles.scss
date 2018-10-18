@@ -101,7 +101,7 @@ h1 {
         color: #000;
             &:hover {
                 color: $red;
-                @include transition(0.2s);
+                @include transition(0.3s);
             }
     }
     .sidebar__toggler {
