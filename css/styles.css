@@ -102,6 +102,8 @@
   border: 0;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   outline: none;
 }
 
@@ -1101,6 +1103,12 @@ h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-left: 25px;
+}
+
+@media (max-width: 576px) {
+  .main .success .success__frames .success-frame .success-frame__rightside {
+    margin-bottom: 70px;
+  }
 }
 
 .main .success .success__frames .success-frame .success-frame__rightside .success-frame__name {
