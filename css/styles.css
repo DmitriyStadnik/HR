@@ -220,12 +220,17 @@ h1 {
   font-weight: 600;
   text-decoration: none;
   color: #000;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .header .header_link:hover, .header .sidebar__toggler:hover {
   color: #E64415;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+}
+
+.header .sidebar__toggler {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .header .sidebar__toggler .mb0--open {
@@ -242,6 +247,16 @@ h1 {
   -webkit-transform: translateY(-7px) rotate(-45deg);
           transform: translateY(-7px) rotate(-45deg);
   width: 25px !important;
+}
+
+.header .sidebar__toggler--opening {
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+}
+
+.header .sidebar__toggler--closing {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .header .header__rightblock {

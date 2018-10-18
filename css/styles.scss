@@ -99,12 +99,14 @@ h1 {
         font-weight: $fw_SemiBold;
         text-decoration: none;
         color: #000;
+        @include transition(0.3s);
             &:hover {
                 color: $red;
-                @include transition(0.3s);
             }
     }
+
     .sidebar__toggler {
+        @include transition(0.6s);
         .mb0--open {
             transform: translateY(5px) rotate(45deg);
             width: 25px !important;
@@ -120,6 +122,14 @@ h1 {
             width: 25px !important;
           }
     }
+    .sidebar__toggler--opening {
+        transform: rotateZ(360deg);
+    }
+    .sidebar__toggler--closing {
+        transform: rotateY(180deg);
+    }
+
+
     .header__rightblock {
         height: 100%;
         padding-right: 5.208333333333334vw;
