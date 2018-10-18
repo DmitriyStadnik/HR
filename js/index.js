@@ -57,22 +57,22 @@ $(document).ready(function(){
         }
     })
 
-    // $('.success__frames').not('.slick-initialized').slick({
-    //     infinite:true,
-    //     slidesToShow:1,
-    //     slidesToScroll:1,
-    //     responsive : [
-    //         {
-    //             breakpoint: 576,
-    //             settings:{
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //                 arrows: false,
-    //                 dots: true,
-    //             }
-    //         },
-    //     ]
-    // });
+    $('.success__frames').not('.slick-initialized').slick({
+        infinite:true,
+        slidesToShow:3,
+        slidesToScroll:1,
+        responsive : [
+            {
+                breakpoint: 576,
+                settings:{
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+        ]
+    });
 })
 
 

@@ -633,6 +633,12 @@ h1 {
   color: #9E9E9E;
 }
 
+@media (max-width: 576px) {
+  .main .intro .intro__leftside .intro__top-slider .top-slider__slider-header .slider-header__arrows {
+    display: none;
+  }
+}
+
 .main .intro .intro__leftside .intro__top-slider .top-slider__slider-header .slider-header__arrows .slider__arrow {
   padding: 20px;
   text-decoration: none;
@@ -1005,6 +1011,7 @@ h1 {
 @media (max-width: 576px) {
   .main .foxtrot-jobs .foxtrot-jobs__professions .profession-tile a .profession-tile__text {
     text-align: center;
+    height: 110px;
   }
 }
 
@@ -1074,6 +1081,17 @@ h1 {
   margin-right: 25px;
 }
 
+@media (max-width: 576px) {
+  .main .success .success__frames .success-frame {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 .main .success .success__frames .success-frame .success-frame__rightside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1113,10 +1131,40 @@ h1 {
   margin-bottom: 25px;
 }
 
+@media (max-width: 576px) {
+  .main .success .success__frames .success-frame .success-frame__rightside .success-frame__text {
+    text-align: center;
+    height: 110px;
+  }
+}
+
 .main .success .success__frames .success-frame .success-frame__rightside .pill_button {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+@media (max-width: 576px) {
+  .main .success .success__frames .success-frame .success-frame__rightside {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .main .success .success__frames .success-frame .success-frame__leftside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .main .bottom {

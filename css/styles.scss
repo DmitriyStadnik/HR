@@ -356,6 +356,9 @@ h1 {
                         color: $gray;
                     }
                     .slider-header__arrows {
+                        @include respond-to(small) {
+                            display: none;
+                        }
                         .slider__arrow {
                             padding: 20px;
                             text-decoration: none;
@@ -583,6 +586,7 @@ h1 {
                         text-align: center;
                         @include respond-to(small) {
                             text-align: center;
+                            height: 110px;
                         }
                     }
                 }
@@ -618,6 +622,10 @@ h1 {
             .success-frame {
                 display: flex;
                 @include mx(25px);
+                @include respond-to (small) {
+                    flex-direction: column;
+                    @include mx(0px);
+                }
                 .success-frame__rightside {
                     display: flex;
                     flex-direction: column;
@@ -645,9 +653,24 @@ h1 {
                         font-size: $fz_medium;
                         font-weight: $fw_Regular;
                         margin-bottom: 25px;
+                        @include respond-to(small) {
+                            text-align: center;
+                            height: 110px;
+                        }
                     }
                     .pill_button {
                         width: max-content;
+                    }
+                    @include respond-to (small) {
+                        align-items: center;
+                        margin-left: 0;
+                    }
+                }
+                .success-frame__leftside {
+                    @include respond-to (small) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                 }
             }
