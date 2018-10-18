@@ -63,6 +63,7 @@ $(document).ready(function(){
         var sidebar = $('.sidebar');
         if (sidebar.hasClass('sidebar--open')) {
             sidebar.removeClass('sidebar--open');
+            $('.sidebar-links ').css('opacity','0');
             $('.header_link').css('display','');
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).removeClass('mb'+i+'--open');
@@ -73,12 +74,12 @@ $(document).ready(function(){
         else {
             $('.sidebar').addClass('sidebar--open');
             $('.header_link').css('display','none');
+            $('.header' ).css('background', '#fff');
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).addClass('mb'+i+'--open');
             }
-            $('.header' ).css('background', '#fff');
             $(this).addClass('sidebar__toggler--opening');
-
+            $('.sidebar-links ').css('opacity','1');
         }
     })
 

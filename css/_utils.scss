@@ -58,6 +58,6 @@
 
 .hide_from_sm {
     @include respond-from(small) {
-        display: none;
+        display: none!important;
     }
 }
