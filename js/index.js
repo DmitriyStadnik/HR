@@ -21,7 +21,8 @@ $(document).ready(function(){
     $('.foxtrot-jobs__professions').not('.slick-initialized').slick({
         infinite:true,
         slidesToShow:5,
-        slidesToScroll:1,
+        slidesToScroll:3,
+        dots: true,
         responsive : [
             {
                 breakpoint: 576,
@@ -36,7 +37,7 @@ $(document).ready(function(){
     });
 
     $('.sidebar__toggler').click(function(event){
-        event.preventDefault;
+        event.preventDefault();
         var sidebar = $('.sidebar');
         if (sidebar.hasClass('sidebar--open')) {
             sidebar.removeClass('sidebar--open');
@@ -44,6 +45,7 @@ $(document).ready(function(){
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).removeClass('mb'+i+'--open');
             }
+            $('.header').css('background', '#fffffff7');
         }
         else {
             $('.sidebar').addClass('sidebar--open');
@@ -51,6 +53,7 @@ $(document).ready(function(){
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).addClass('mb'+i+'--open');
             }
+            $('.header').css('background', '#fff');
         }
     })
 
