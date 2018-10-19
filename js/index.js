@@ -89,14 +89,17 @@ $(document).ready(function(){
         let content = $(this).find('.cities-dropdown__content');
         if ( !$(content).hasClass('cities-dropdown__content--open')) {
             $(content).addClass ('cities-dropdown__content--open');
+            if (screen.width < 576)
+            $('.main').css('margin-right','calc(5.208333333333334vw + 7px)' );
             $('body').css('overflow-y','hidden');
         }
         else {
             $(content).removeClass('cities-dropdown__content--open');
+            if (screen.width < 576)
+            $('.main').css('margin-right','5.208333333333334vw' );
             $('body').css('overflow-y','');
         }
     })
-
 
 })
 

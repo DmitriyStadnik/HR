@@ -475,70 +475,6 @@ h1 {
   margin-right: 0;
 }
 
-.header .header__leftblock .cities-dropdown {
-  position: relative;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content {
-  display: none;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  position: absolute;
-  top: 100%;
-  left: -5px;
-  height: 500%;
-  overflow-y: scroll;
-  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  padding: 20px;
-  padding-right: 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow-y: scroll;
-  padding-right: 20px;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar, .header .header__leftblock .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  width: 5px;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content .cities-dropdown__link {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  text-decoration: none;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content .cities-dropdown__link:hover {
-  color: #E64415;
-  text-decoration: none;
-}
-
-.header .header__leftblock .cities-dropdown .cities-dropdown__content--open {
-  -webkit-animation: fadeIn 0.6s 1;
-          animation: fadeIn 0.6s 1;
-  opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #fff;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
 .header .header__leftblock .header__location {
   margin-right: 55px;
 }
@@ -615,6 +551,86 @@ h1 {
   z-index: 2;
   opacity: 1;
   background: #fff;
+}
+
+.cities-dropdown {
+  position: relative;
+}
+
+.cities-dropdown .cities-dropdown__content {
+  display: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: -5px;
+  height: 500%;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  padding: 20px;
+  padding-right: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 576px) {
+  .cities-dropdown .cities-dropdown__content {
+    width: 60vw;
+    height: 900%;
+  }
+}
+
+.cities-dropdown .cities-dropdown__content .dropdown__content--wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cities-dropdown .cities-dropdown__content .dropdown__content--wrapper .cities-dropdown__link {
+  color: #000 !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper .cities-dropdown__link {
+    font-size: 20px !important;
+  }
+}
+
+.cities-dropdown .cities-dropdown__content .dropdown__content--wrapper .cities-dropdown__link:hover {
+  color: #E64415 !important;
+  text-decoration: none;
+}
+
+.cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar, .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 5px;
+}
+
+.cities-dropdown .cities-dropdown__content--open {
+  -webkit-animation: fadeIn 0.7s 1;
+          animation: fadeIn 0.7s 1;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .main {
@@ -695,8 +711,8 @@ h1 {
 
 @media (max-width: 576px) {
   .main .intro .intro__leftside h1 {
-    -webkit-animation: smallDrop 0.7s 1;
-            animation: smallDrop 0.7s 1;
+    -webkit-animation: smallDrop 0.5s 1;
+            animation: smallDrop 0.5s 1;
   }
 }
 
@@ -716,8 +732,8 @@ h1 {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    -webkit-animation: smallDrop 0.7s 1;
-            animation: smallDrop 0.7s 1;
+    -webkit-animation: smallDrop 0.9s 1;
+            animation: smallDrop 0.9s 1;
   }
   .main .intro .intro__leftside .intro__buttons {
     -webkit-box-ordinal-group: 3;
@@ -728,8 +744,8 @@ h1 {
 
 @media (max-width: 576px) and (max-width: 576px) {
   .main .intro .intro__leftside .intro__buttons {
-    -webkit-animation: smallDrop 1s 1;
-            animation: smallDrop 1s 1;
+    -webkit-animation: smallDrop 1.1s 1;
+            animation: smallDrop 1.1s 1;
   }
 }
 
