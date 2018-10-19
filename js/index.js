@@ -35,7 +35,8 @@ $(document).ready(function(){
                     slidesToScroll: 1,
                     arrows: false,
                     dots: true,
-                }
+                },
+                
             },
         ]
     });
@@ -80,6 +81,19 @@ $(document).ready(function(){
             }
             $(this).addClass('sidebar__toggler--opening');
             $('.sidebar-links ').css('opacity','1');
+        }
+    })
+
+    $('.cities-dropdown').hover(function (event){
+        event.preventDefault();
+        let content = $(this).find('.cities-dropdown__content');
+        if ( !$(content).hasClass('cities-dropdown__content--open')) {
+            $(content).addClass ('cities-dropdown__content--open');
+            $('body').css('overflow-y','hidden');
+        }
+        else {
+            $(content).removeClass('cities-dropdown__content--open');
+            $('body').css('overflow-y','');
         }
     })
 

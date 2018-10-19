@@ -1,6 +1,21 @@
 @charset 'utf-8';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "animations.scss","utils.scss";
+::-webkit-scrollbar {
+    width: 5px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+::-webkit-scrollbar-thumb{
+    background: $red;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+}
+
+
 
 *  { 
     margin: 0; 
@@ -15,10 +30,13 @@
 
 body, html {
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
 }
 body {
     font-family: $font-stack;
 }
+
 h1 {
     font-size: $fz_large;
     font-weight: $fw_ExtraBold;
@@ -169,11 +187,54 @@ h1 {
                 margin-right: 0;
             }
         }
-        .header__location {
-            text-decoration: underline;
-            margin-right: 55px;
+        .cities-dropdown {
+            position: relative;
+            .cities-dropdown__content {
+                display: none;
+                @include transition(0.4s);
+                position: absolute;
+                top: 100%;
+                left: -5px;
+                height: 500%;
+                overflow-y: scroll;
+                @include shadow();
+                opacity: 0;
+                padding: 20px;
+                padding-right: 0;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                .dropdown__content--wrapper {
+                    flex-direction: column;
+                    overflow-y: scroll;
+                    padding-right: 20px;
+                }
+                .cities-dropdown__link {
+                    color: #000;
+                    font-weight: $fw_Regular;
+                    font-size: $fz_xsmall;
+                    text-decoration: none;
+                    @include my(5px);
+                    @include transition (0.4s);
+                    &:hover {
+                        color: $red;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .cities-dropdown__content--open {
+                animation: fadeIn 0.6s 1;
+                opacity: 1;
+                display: flex;
+                background: #fff;
+                @include transition(0.4s);
+            }
         }
-
+        .header__location {
+            margin-right: 55px;
+            .current-city{
+                text-decoration: underline;
+            }
+        }
         .header__call {
             text-decoration: none;
         }
@@ -401,7 +462,7 @@ h1 {
                         max-width: 100vw;
                     }    
                     .top-slider__tile {
-                        width: 33%;
+                        width: fit-content!important;
                         border-radius: 3px;
                         padding: 20px;
                         @include my(15px);

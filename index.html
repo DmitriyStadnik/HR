@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" defer href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
 
 </head>
@@ -26,8 +26,24 @@
             <a href="#" class="header_link">
                 <img src="/img/logo.svg" alt="" class="header__logo">
             </a>
-            <a href="#" class="header__location header_link hide_on_sm">Київ</a>
-
+            <div class="cities-dropdown">
+                <a href="#" class="header__location header_link hide_on_sm ">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="current-city">Київ</span>
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <div class="header-cities cities-dropdown__content">
+                    <div class="dropdown__content--wrapper">
+                        <a href="#" class="cities-dropdown__link">Вінниця</a>
+                        <a href="#" class="cities-dropdown__link">Херсон</a>
+                        <a href="#" class="cities-dropdown__link">Чернігів</a>
+                        <a href="#" class="cities-dropdown__link">Харків</a>
+                        <a href="#" class="cities-dropdown__link">Івано-Франківськ</a>
+                        <a href="#" class="cities-dropdown__link">Миколаїв</a>
+                        <a href="#" class="cities-dropdown__link">Луцьк</a>
+                    </div>
+                </div>
+            </div>
             <a href="#" class="header__call header_link hide_on_sm">8-800-200-23-11</a>
 
         </div>
@@ -359,10 +375,8 @@
             <a href="#" class="footer__link">Linked In</a>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous">
-
-        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/js/index.js"></script>
 
