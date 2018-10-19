@@ -2,18 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "animations.scss","utils.scss";
 ::-webkit-scrollbar {
-    width: 5px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
-::-webkit-scrollbar-thumb{
-    background: $red;
+    width: 7px; 
+    background: transparent;
+
 }
 
-::-webkit-scrollbar-thumb:hover{
-    ::-webkit-scrollbar {
-        width: 20px;
-    }
+::-webkit-scrollbar-thumb{
+    background: $red;
+    border-radius: 40px;
 }
+
 
 
 
@@ -207,6 +205,11 @@ h1 {
                     flex-direction: column;
                     overflow-y: scroll;
                     padding-right: 20px;
+                    &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
+                        border-radius: 20px;
+                        width: 5px;
+                    }
+
                 }
                 .cities-dropdown__link {
                     color: #000;

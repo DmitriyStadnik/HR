@@ -242,18 +242,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  /* remove scrollbar space */
+  width: 7px;
   background: transparent;
-  /* optional: just make scrollbar invisible */
 }
 
 ::-webkit-scrollbar-thumb {
   background: #E64415;
-}
-
-::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar {
-  width: 20px;
+  border-radius: 40px;
 }
 
 * {
@@ -509,6 +504,11 @@ h1 {
           flex-direction: column;
   overflow-y: scroll;
   padding-right: 20px;
+}
+
+.header .header__leftblock .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar, .header .header__leftblock .cities-dropdown .cities-dropdown__content .dropdown__content--wrapper::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  width: 5px;
 }
 
 .header .header__leftblock .cities-dropdown .cities-dropdown__content .cities-dropdown__link {
