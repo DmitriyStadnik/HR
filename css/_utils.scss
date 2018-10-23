@@ -50,6 +50,22 @@
     }
 }
 
+
+@mixin respond-from-to ($from,$to) {
+    @if map-has-key($breakpoints, $from) {
+        @if map-has-key($breakpoints , $to ) {
+            @media ( min-width: #{map-get($breakpoints, $from)})and (max-width: #{map-get($breakpoints, $to)} ) {
+                @content;
+            }
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+
 .hide_on_sm {
     @include respond-to(small) {
         display: none;

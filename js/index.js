@@ -1,11 +1,10 @@
 $(window).ready(function(){
     $('.top-slider__tiles').not('.slick-initialized').css('opacity','1').slick({
         infinite:false,
-        slidesToShow:3,
+        slidesToShow:2,
         variableWidth: false,
         prevArrow: $('.slider__arrow--prev'),
         nextArrow: $('.slider__arrow--next'),
-        useTransform: true,
         responsive : [
             {
                 breakpoint: 576,
@@ -97,6 +96,7 @@ $(window).ready(function(){
             $('body').css('overflow-y','');
         }
     })
+
 
 })
 
