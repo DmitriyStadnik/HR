@@ -1,24 +1,21 @@
-$(document).ready(function(){
-    $('.top-slider__tiles').not('.slick-initialized').slick({
-        infinite:true,
-        slidesToShow:4,
-        slidesToScroll:2,
+$(window).ready(function(){
+    $('.top-slider__tiles').not('.slick-initialized').css('opacity','1').slick({
+        infinite:false,
+        slidesToShow:3,
+        variableWidth: false,
         prevArrow: $('.slider__arrow--prev'),
         nextArrow: $('.slider__arrow--next'),
+        useTransform: true,
         responsive : [
             {
                 breakpoint: 576,
                 settings:{
-                    slidesToShow: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     variableWidth: true,      
                 }
             },
-            {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
+
         ]
     });
     
