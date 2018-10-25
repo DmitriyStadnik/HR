@@ -1,29 +1,49 @@
 $(window).ready(function(){
-    $('.top-slider__tiles').not('.slick-initialized').css('opacity','1').slick({
-        infinite:false,
-        slidesToShow:2,
-        variableWidth: false,
+    $('.top-slider__tiles').css('opacity','1').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         prevArrow: $('.slider__arrow--prev'),
         nextArrow: $('.slider__arrow--next'),
+        centerMode: false,
         responsive : [
+            {
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
             {
                 breakpoint: 576,
                 settings:{
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 2,
+                    infinite: true,
+                    // centerMode: true,
+                    slidesToScroll: 4,
                     variableWidth: true,      
                 }
             },
 
         ]
     });
-    
     $('.foxtrot-jobs__professions').not('.slick-initialized').slick({
         infinite:true,
         slidesToShow:5,
         slidesToScroll:3,
         dots: true,
         responsive : [
+            {
+                breakpoint: 1900,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
             {
                 breakpoint: 576,
                 settings:{
@@ -43,6 +63,18 @@ $(window).ready(function(){
         slidesToScroll:1,
         dots: true,
         responsive : [
+            {
+                breakpoint: 1900,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 1600,
+                settings:{
+                    slidesToShow:2,
+                }
+            },
             {
                 breakpoint: 576,
                 settings:{
@@ -85,14 +117,10 @@ $(window).ready(function(){
         let content = $(this).find('.cities-dropdown__content');
         if ( !$(content).hasClass('cities-dropdown__content--open')) {
             $(content).addClass ('cities-dropdown__content--open');
-            if (screen.width < 576)
-            $('.main').css('margin-right','calc(5.208333333333334vw + 7px)' );
             $('body').css('overflow-y','hidden');
         }
         else {
             $(content).removeClass('cities-dropdown__content--open');
-            if (screen.width < 576)
-            $('.main').css('margin-right','5.208333333333334vw' );
             $('body').css('overflow-y','');
         }
     })

@@ -4,10 +4,16 @@
 ::-webkit-scrollbar {
     width: 7px; 
     background: transparent;
+    @include respond-to(small) {
+        width: 0;
+    }
 }
 ::-webkit-scrollbar-thumb{
     background: $red;
     border-radius: 40px;
+    @include respond-to(small) {
+        width: 0;
+    }
 }
 *  { 
     margin: 0; 
@@ -49,7 +55,7 @@ h1 {
     @include respond-to(small) {
         padding: 11px 20px 11px 20px;
     }
-    @include respond-from-to(xlarge,xxxlarge) {
+    @include respond-from-to(xlarge,bigone) {
         font-size: 1vw;
         padding: 10px 30px 10px 30px;
     }
@@ -146,7 +152,7 @@ h1 {
         }
         .header_link {
             margin-right: 20px;
-            @include respond-from-to (xlarge,xxxlarge) {
+            @include respond-from-to (xlarge,bigone) {
                 font-size: 1vw;
             }
         }
@@ -187,7 +193,7 @@ h1 {
         }
         .header__location {
             margin-right: 55px;
-            @include respond-from-to(small, xxxlarge) {
+            @include respond-from-to(small, bigone) {
                 margin-right: 15px;
             }
             .current-city{
@@ -206,13 +212,13 @@ h1 {
                 margin-left: 16.5333333333vw;
                 margin-right: 0;
             }
-            @include respond-from-to(small,xxxlarge) {
+            @include respond-from-to(small,bigone) {
                 width: 150px;
                 margin-right: 30px;
             }
         }
         .header_link {
-            @include respond-from-to (xlarge,xxxlarge) {
+            @include respond-from-to (xlarge,bigone) {
                 font-size: 1vw;
             }
         }
@@ -327,7 +333,7 @@ h1 {
     }
     .section {
         width: 100%;
-        @include py(300px);
+        @include py(120px);
         @include respond-to(small) {
             @include py(50px);
             flex-direction: column;
@@ -354,13 +360,16 @@ h1 {
             flex-direction: column;
             align-items: center;
             margin-right: 100px;
-            width: 100%;
+            width: 50%;
+            @include respond-to(small) {
+                width: 100%;
+            }
             h1 {
                 animation: smallDrop 0.5s 1;
                 @include respond-to (small) {
                     animation: smallDrop 0.5s 1;
                 }
-                @include respond-from-to(xlarge,xxxlarge) {
+                @include respond-from-to(xlarge,bigone) {
                     font-size: 2.34375vw;
                     line-height: 50px;
                 }
@@ -507,36 +516,27 @@ h1 {
                 }
                 .top-slider__tiles{
                     display: flex;
-                    width: 38.9453125vw;
-                    max-width:38.9453125vw;
+                    width:100%;
                     overflow: hidden;
                     opacity: 0;
                     @include transition(0.6s);
                     @include respond-to(small) {
                         max-width: 100vw;
                         width: 100vw;
-                    }    
+                    }
                     .top-slider__tile {
-                        width: fit-content!important;
                         border-radius: 3px;
-                        padding: 20px;
-                        @include my(15px);
+                        margin-bottom: 30px;
                         @include mx(5px);
                         @include shadow ();
                         @include respond-to (small) {
-                            margin-top: 10px;
-                            margin-bottom: 30px;
-                            padding: 10px;
-                            width: unset;
-                            max-width: 40vw;
-                        }
-                        @include respond-to (xsmall) {
-                            max-width: 44vw;
+                            max-width: 55vw;
                         }
                         a {
                             text-decoration: none;
                             display: flex;
                             flex-direction: column;
+                            margin: 20px;
                         }
                         .tile__city , .tile__date {
                             font-size: $fz_small;
@@ -558,8 +558,10 @@ h1 {
             }
         }
         .intro__rightside {
+            width: 50%;
             @include respond-to(small) {
                 display: none;
+
             }
             .intro__img {
                 animation: slideFromBottomRight 1s 1;
@@ -769,6 +771,7 @@ h1 {
                     display: flex;
                     flex-direction: column;
                     margin-left: 25px;
+                    justify-content: space-between;
                     @include respond-to (small) {
                         margin-bottom: 0px;
                     }
