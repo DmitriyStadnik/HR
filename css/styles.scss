@@ -370,6 +370,9 @@ h1 {
         @include respond-to (small) {
             flex-direction: column;
         }
+        @include respond-from-to(small, medium) {
+            flex-direction: column-reverse;
+        }
         .intro__leftside{
             display: flex;
             flex-direction: column;
