@@ -59,6 +59,15 @@ h1 {
         font-size: 1vw;
         padding: 10px 30px 10px 30px;
     }
+    @include respond-from-to(small,medium) {
+        padding: 7px 17.5px 7px 17.5px;
+        font-size: 16px;
+    }
+    @include respond-from-to(medium,xlarge) {
+        padding: 7px 17.5px 7px 17.5px;
+        font-size: 18px;
+    }
+
 }
 .pill_button--solid {
     color: #fff;
@@ -155,6 +164,9 @@ h1 {
             @include respond-from-to (xlarge,bigone) {
                 font-size: 1vw;
             }
+            @include respond-from-to(small,xlarge) {
+                display: none;
+            }
         }
 
 
@@ -202,6 +214,9 @@ h1 {
         }
         .header__call {
             text-decoration: none;
+            @include respond-from-to(small,medium) {
+                display: none;
+            }
         }
         .header__logo {
             width: 200px;
@@ -565,7 +580,7 @@ h1 {
             }
             .intro__img {
                 animation: slideFromBottomRight 1s 1;
-                width: 50vw;
+                width: 42vw;
             }
         }
     }

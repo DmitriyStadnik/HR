@@ -78,6 +78,13 @@
     }
 }
 
+.hide_from_xl {
+    @include respond-from(xlarge) {
+        display: none!important;
+    }
+}
+
+
 
 .noscroll {
     height: 100% !important;

@@ -236,6 +236,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .hide_from_xl {
+    display: none !important;
+  }
+}
+
 .noscroll {
   height: 100% !important;
   overflow-y: hidden !important;
@@ -320,6 +326,20 @@ h1 {
   .pill_button {
     font-size: 1vw;
     padding: 10px 30px 10px 30px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .pill_button {
+    padding: 7px 17.5px 7px 17.5px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .pill_button {
+    padding: 7px 17.5px 7px 17.5px;
+    font-size: 18px;
   }
 }
 
@@ -458,6 +478,12 @@ h1 {
   }
 }
 
+@media (min-width: 576px) and (max-width: 1200px) {
+  .header .header__rightblock .header_link {
+    display: none;
+  }
+}
+
 .header .header__leftblock {
   height: 100%;
   padding-left: 5.208333333333334vw;
@@ -525,6 +551,12 @@ h1 {
 
 .header .header__leftblock .header__call {
   text-decoration: none;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .header .header__leftblock .header__call {
+    display: none;
+  }
 }
 
 .header .header__leftblock .header__logo {
@@ -1123,7 +1155,7 @@ h1 {
 .main .intro .intro__rightside .intro__img {
   -webkit-animation: slideFromBottomRight 1s 1;
           animation: slideFromBottomRight 1s 1;
-  width: 50vw;
+  width: 42vw;
 }
 
 .main .foxtrot-is {
