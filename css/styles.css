@@ -331,7 +331,7 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 768px) {
   .pill_button {
-    padding: 7px 17.5px 7px 17.5px;
+    padding: 12px 17.5px 12px 17.5px;
     font-size: 16px;
   }
 }
@@ -806,64 +806,20 @@ h1 {
   width: 50%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .main .intro .intro__leftside {
     width: 100%;
-  }
-}
-
-.main .intro .intro__leftside h1 {
-  -webkit-animation: smallDrop 0.5s 1;
-          animation: smallDrop 0.5s 1;
-}
-
-@media (max-width: 576px) {
-  .main .intro .intro__leftside h1 {
-    -webkit-animation: smallDrop 0.5s 1;
-            animation: smallDrop 0.5s 1;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1900px) {
-  .main .intro .intro__leftside h1 {
-    font-size: 2.34375vw;
-    line-height: 50px;
-  }
-}
-
-@media (max-width: 576px) {
-  .main .intro .intro__leftside {
     margin-right: 0;
   }
-  .main .intro .intro__leftside h1 {
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-  }
-  .main .intro .intro__leftside .intro__jobs-needed {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    -webkit-animation: smallDrop 0.9s 1;
-            animation: smallDrop 0.9s 1;
-  }
-  .main .intro .intro__leftside .intro__buttons {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    -webkit-animation: smallDrop 1.1s 1;
-            animation: smallDrop 1.1s 1;
+}
+
+@media (min-width: 768px) {
+  .main .intro .intro__leftside .intro__crutch {
+    display: none;
   }
 }
 
-@media (max-width: 576px) and (max-width: 576px) {
-  .main .intro .intro__leftside .intro__buttons {
-    -webkit-animation: smallDrop 1.1s 1;
-            animation: smallDrop 1.1s 1;
-  }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .main .intro .intro__leftside .intro__crutch {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
@@ -876,6 +832,9 @@ h1 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+@media (max-width: 768px) {
   .main .intro .intro__leftside .intro__crutch .crutch__img {
     width: 100vw;
     margin-bottom: 50px;
@@ -885,14 +844,7 @@ h1 {
   }
 }
 
-@media (max-width: 576px) and (max-width: 576px) {
-  .main .intro .intro__leftside .intro__crutch .crutch__img {
-    -webkit-animation: slideFromBottomRight 1.2s 1;
-            animation: slideFromBottomRight 1.2s 1;
-  }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .main .intro .intro__leftside .intro__crutch .crutch__btn {
     width: 100%;
     background: #E64415;
@@ -907,15 +859,84 @@ h1 {
     bottom: 0;
     z-index: 1;
   }
+}
+
+.main .intro .intro__leftside .intro__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-animation: smallDrop 1s 1;
+          animation: smallDrop 1s 1;
+}
+
+@media (max-width: 768px) {
+  .main .intro .intro__leftside .intro__buttons {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-bottom: 50px;
+    -webkit-animation: smallDrop 1.1s 1;
+            animation: smallDrop 1.1s 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main .intro .intro__leftside .intro__buttons .pill_button:nth-child(1) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) and (max-width: 576px) {
+  .main .intro .intro__leftside .intro__buttons .pill_button:nth-child(1) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main .intro .intro__leftside .intro__jobs-needed {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-animation: smallDrop 0.9s 1;
+            animation: smallDrop 0.9s 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
   .main .intro .intro__leftside .gray-text {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
   }
-  .main .intro .intro__leftside .intro__top-slider {
-    -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-            order: 5;
+}
+
+.main .intro .intro__leftside h1 {
+  -webkit-animation: smallDrop 0.5s 1;
+          animation: smallDrop 0.5s 1;
+}
+
+@media (max-width: 768px) {
+  .main .intro .intro__leftside h1 {
+    -webkit-animation: smallDrop 0.5s 1;
+            animation: smallDrop 0.5s 1;
+    text-align: center;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1900px) {
+  .main .intro .intro__leftside h1 {
+    font-size: 2.34375vw;
+    line-height: 50px;
   }
 }
 
@@ -1002,37 +1023,6 @@ h1 {
   }
 }
 
-.main .intro .intro__leftside .intro__buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  -webkit-animation: smallDrop 1s 1;
-          animation: smallDrop 1s 1;
-  margin-bottom: 50px;
-}
-
-@media (max-width: 576px) {
-  .main .intro .intro__leftside .intro__buttons {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-.main .intro .intro__leftside .intro__buttons .pill_button:nth-child(1) {
-  margin-right: 30px;
-}
-
-@media (max-width: 576px) {
-  .main .intro .intro__leftside .intro__buttons .pill_button:nth-child(1) {
-    margin-right: 0;
-  }
-}
-
 .main .intro .intro__leftside .intro__top-slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1044,6 +1034,14 @@ h1 {
   width: 100%;
   -webkit-animation: fadeIn 2s 1;
           animation: fadeIn 2s 1;
+}
+
+@media (max-width: 768px) {
+  .main .intro .intro__leftside .intro__top-slider {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
 }
 
 .main .intro .intro__leftside .intro__top-slider .top-slider__slider-header {
@@ -1065,7 +1063,7 @@ h1 {
   color: #9E9E9E;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .main .intro .intro__leftside .intro__top-slider .top-slider__slider-header .slider-header__arrows {
     display: none;
   }
@@ -1155,7 +1153,7 @@ h1 {
   width: 50%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .main .intro .intro__rightside {
     display: none;
   }

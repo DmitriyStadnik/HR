@@ -60,7 +60,7 @@ h1 {
         padding: 10px 30px 10px 30px;
     }
     @include respond-from-to(small,medium) {
-        padding: 7px 17.5px 7px 17.5px;
+        padding: 12px 17.5px 12px 17.5px;
         font-size: 16px;
     }
     @include respond-from-to(medium,xlarge) {
@@ -379,52 +379,35 @@ h1 {
             align-items: center;
             margin-right: 100px;
             width: 50%;
-            @include respond-to(small) {
+            @include respond-to (medium) {
                 width: 100%;
+                margin-right: 0; 
             }
-            h1 {
-                animation: smallDrop 0.5s 1;
-                @include respond-to (small) {
-                    animation: smallDrop 0.5s 1;
+            .intro__crutch {
+                @include respond-from (medium) {
+                    display: none;
                 }
-                @include respond-from-to(xlarge,bigone) {
-                    font-size: 2.34375vw;
-                    line-height: 50px;
-                }
-            }
-            @include respond-to(small) { 
-                margin-right: 0;       
-                h1 {order: 0;}
-                .intro__jobs-needed {
-                    order: 1;
-                    animation: smallDrop 0.9s 1;
-                }
-                .intro__buttons {
-                    order: 2;
-                    animation: smallDrop 1.1s 1;
-                    @include respond-to(small) {
-                        animation: smallDrop 1.1s 1;
-                    }
-                }
-                .intro__crutch {
+                @include respond-to (medium) {
                     order:3;
                     display: flex;
                     flex-direction: column;
-                    .crutch__img {
+                }
+                .crutch__img {
+                    @include respond-to (medium) {
                         width: 100vw;
                         margin-bottom: 50px;
                         padding-left: 2%;
                         animation: slideFromBottomRight 1.2s 1;
-                        @include respond-to (small) {
-                            animation: slideFromBottomRight 1.2s 1;
-                        }
                     }
-                    .crutch__btn {
+                }
+                .crutch__btn {
+                    @include respond-to(medium) {
                         width: 100%;
                         background:$red;
                         font-size: $fz_small;
                         font-weight: $fw_SemiBold;
                         color: #fff;
+
                         text-decoration: none;
                         text-align: center;
                         @include py(15px);
@@ -433,8 +416,49 @@ h1 {
                         z-index: 1;
                     }
                 }
-                .gray-text {order: 4;}
-                .intro__top-slider{order: 5;}
+            }
+            .intro__buttons {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                animation: smallDrop 1s 1;
+                @include respond-to (medium) {
+                    order: 2;
+                    margin-bottom: 50px;
+                    animation: smallDrop 1.1s 1;
+                    justify-content: center;
+                    .pill_button:nth-child(1){
+                        margin-right: 30px;
+                        @include respond-to (small) {
+                            margin-right: 0;
+                        }
+                    }
+                    
+                }
+            }
+            .intro__jobs-needed {
+                @include respond-to(medium) {
+                    order: 1;
+                    animation: smallDrop 0.9s 1;
+                    justify-content: center;
+                }
+            }
+            .gray-text {
+                @include respond-to (medium) {
+                    order: 4;
+                }
+            }
+            h1 {
+                animation: smallDrop 0.5s 1;
+                @include respond-to (medium) {
+                    animation: smallDrop 0.5s 1;
+                    text-align: center;
+                    order: 0;
+                }
+                @include respond-from-to(xlarge,bigone) {
+                    font-size: 2.34375vw;
+                    line-height: 50px;
+                }
             }
             .gray-text {
                 margin-bottom: 30px;
@@ -484,27 +508,14 @@ h1 {
                     }
                 }
             }
-            .intro__buttons {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                animation: smallDrop 1s 1;
-                @include respond-to(small) {
-                    justify-content: center;
-                }
-                .pill_button:nth-child(1){
-                    margin-right: 30px;
-                    @include respond-to (small) {
-                        margin-right: 0;
-                    }
-                }
-                margin-bottom: 50px;
-            }
             .intro__top-slider {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 animation: fadeIn 2s 1;
+                @include respond-to(medium) {
+                    order: 5;
+                }
                 .top-slider__slider-header {
                     display: flex;
                     align-items: center;
@@ -516,7 +527,7 @@ h1 {
                         color: $gray;
                     }
                     .slider-header__arrows {
-                        @include respond-to(small) {
+                        @include respond-to(medium) {
                             display: none;
                         }
                         .slider__arrow {
@@ -577,9 +588,8 @@ h1 {
         }
         .intro__rightside {
             width: 50%;
-            @include respond-to(small) {
+            @include respond-to(medium) {
                 display: none;
-
             }
             .intro__img {
                 animation: slideFromBottomRight 1s 1;
@@ -888,3 +898,4 @@ h1 {
        }
    }
 }
+    
