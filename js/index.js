@@ -164,13 +164,14 @@ $(window).ready(function(){
         if ( !$(content).hasClass('cities-dropdown__content--open')) {
             $(content).addClass ('cities-dropdown__content--open');
             $('body').css('overflow-y','hidden');
+            if (screen.width > 768)
             $('.main').css('margin-right','calc(5.20833vw + 7px)');
-
 
         }
         else {
             $(content).removeClass('cities-dropdown__content--open');
             $('body').css('overflow-y','');
+            if (screen.width > 768)
             $('.main').css('margin-right','5.20833vw');
 
 
