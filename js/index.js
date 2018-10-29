@@ -144,7 +144,6 @@ $(window).ready(function(){
             }
             $('.header').css('background', '#fffffff7');
             $('.header__calltoaction').css('display','');
-            $(this).removeClass('sidebar__toggler--opening');
         }
         else {
             $('.sidebar').addClass('sidebar--open');
@@ -154,7 +153,6 @@ $(window).ready(function(){
             for (let i = 0; i < $('.menu-bar').length; i++) {
                 $($('.menu-bar')[i]).addClass('mb'+i+'--open');
             }
-            $(this).addClass('sidebar__toggler--opening');
             $('.sidebar-links ').css('opacity','1');
 
         }

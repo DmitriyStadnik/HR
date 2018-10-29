@@ -61,10 +61,6 @@ h1 {
     @include respond-to(small) {
         padding: 11px 20px 11px 20px;
     }
-    @include respond-from-to(xlarge,bigone) {
-        font-size: 1vw;
-        padding: 10px 30px 10px 30px;
-    }
     @include respond-from-to(small,medium) {
         padding: 12px 17.5px 12px 17.5px;
         font-size: 16px;
@@ -72,6 +68,10 @@ h1 {
     @include respond-from-to(medium,xlarge) {
         padding: 12px 22.5px 12px 22.5px;
         font-size: 18px;
+    }
+    @include respond-from-to(xlarge,bigone) {
+        font-size: 1vw;
+        padding: 10px 30px 10px 30px;
     }
 
 }
@@ -121,7 +121,7 @@ h1 {
     @include respond-to (small) {
         height: 68px;
     }
-    .header_link, .sidebar__toggler {
+    &_link, .sidebar__toggler {
         font-size: $fz_small;
         font-weight: $fw_SemiBold;
         text-decoration: none;
@@ -148,12 +148,12 @@ h1 {
             width: 25px !important;
           }
     }
-    .sidebar__toggler--opening {
-        transform: rotateZ(360deg);
-    }
-    .sidebar__toggler--closing {
-        transform: rotateY(180deg);
-    }
+    // .sidebar__toggler--opening {
+    //     transform: rotateZ(360deg);
+    // }
+    // .sidebar__toggler--closing {
+    //     transform: rotateY(180deg);
+    // }
     .header__rightblock {
         height: 100%;
         padding-right: 5.208333333333334vw;
@@ -177,7 +177,7 @@ h1 {
 
 
     }
-    .header__leftblock {
+    &__leftblock {
         height: 100%;
         padding-left: 5.208333333333334vw;
         .logo__wrapper {
@@ -257,12 +257,20 @@ h1 {
     height: 100vh;
     padding-top: 40px;  
     background: #fff;
-    .sidebar-links {
+    &-links {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding-left: 20px;
         @include transition (0.1s);
+        .sidebar__phone {
+            font-weight: $fw_ExtraBold;
+            display: none;
+            @include respond-from-to(small,medium) {
+                display: block;
+            };
+
+        }
         .sidebar__link {
             color: #000;
             text-decoration: none;
@@ -290,7 +298,7 @@ h1 {
 .cities-dropdown {
     position: relative;
     display: flex;
-    .cities-dropdown__content {
+    &__content {
         display: none;
         @include transition(0.4s);
         position: absolute;
@@ -337,7 +345,7 @@ h1 {
         }
         
     }
-    .cities-dropdown__content--open {
+    &__content--open {
         animation: fadeIn 0.7s 1;
         opacity: 1;
         display: flex;
@@ -353,7 +361,6 @@ h1 {
     @include respond-to (xlarge) {
         margin-top: 130px;
     }
-
     .section {
         width: 100%;
         @include py(120px);
@@ -387,7 +394,7 @@ h1 {
         @include respond-from-to(small, xlarge) {
             flex-direction: column-reverse;
         }
-        .intro__leftside{
+        &__leftside{
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -422,7 +429,7 @@ h1 {
                     }
                 }
                 .crutch__btn {
-                    @include respond-to(large) {
+                    @include respond-to(xlarge) {
                         width: 100%;
                         background:$red;
                         font-size: $fz_small;
@@ -601,12 +608,15 @@ h1 {
                             @include respond-to(small) {
                                 max-width: 100%;
                             }
+                            @include respond-from-to(small,medium) {
+                                font-size: $fz_small;
+                            }
                         }                
                     }
                 }
             }
         }
-        .intro__rightside {
+        &__rightside {
             width: 50%;
             @include respond-to(xlarge) {
                 display: none;
@@ -624,7 +634,7 @@ h1 {
         @include respond-to(xlarge) {
             flex-direction: column;
         }
-        .foxtrot-is__leftside {
+        &__leftside {
             display: flex;
             flex-direction: column;   
             margin-right: 100px;
@@ -640,7 +650,7 @@ h1 {
                 margin-top: 30px;
             }
         }
-        .foxtrot-is__rightside {
+        &__rightside {
             position: relative;
             .foxtrot-is__extratext {
                 position: absolute;
@@ -659,7 +669,7 @@ h1 {
     .opportunities {
         display: flex;
         align-items: center;
-        .opportunities__leftside {
+        &__leftside {
             display: flex;
             flex-direction: column;
             margin-right: 100px;
@@ -674,7 +684,7 @@ h1 {
                 width: max-content;
             }
         }
-        .opportunities__rightside {
+        &__rightside {
             .opportunities__img {
                 width: 50vw;
             }
@@ -685,7 +695,7 @@ h1 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        .foxtrot-jobs__buttons {
+        &__buttons {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -721,14 +731,14 @@ h1 {
                 color: #fff;
             }
         }
-        .foxtrot-jobs__show-all {
+        &__show-all {
             margin-bottom: 60px;
             font-size: $fz_small;
             font-weight: $fw_SemiBold;
             text-decoration: underline;
             color: $red;
         }
-        .foxtrot-jobs__professions {
+        &__professions {
             display: flex;
             align-items: center;
             max-width: 100%;
@@ -790,7 +800,7 @@ h1 {
     .work-and-study {
         display: flex;
         align-items: center;
-        .work-and-study__rightside {
+        &__rightside {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -807,7 +817,7 @@ h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        .success__frames {
+        &__frames {
             margin-top: 50px;
             display: flex;
             align-items: center;
@@ -898,14 +908,14 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-   .footer__logo {
+    &__logo {
        width: 10.4166666667vw;
        margin-bottom: 50px;
        @include respond-to(xlarge) {
            width: 41.333vw;
        }
    }
-   .footer__links {
+   &__links {
        margin: 50px;
        @include respond-to(small) {
            @include mx(15px);
