@@ -942,35 +942,77 @@ main {
 
 
 
-////////////////////////////////// WORK IN OFFICE PAGE START //////////////////////////////////
+////////////////////////////////// WORK IN jobin PAGE START //////////////////////////////////
 
-.office-main {
+.jobin{
     background: $crema;
     margin-top: 90px;
-    .office-wrapper {
-        .office-sidebar {
+    height: 100vh;
+    margin-left: 0;
+    &-wrapper {
+        .jobin-sidenav {
             position: fixed;
             top: 90px;
             width: 26.0416666667vw;
-            left: 5.208333333333334vw;
-            .office-sidebar__top {
-                padding: 30px 30px 30px 0px;
+            display: flex;
+            flex-direction: column;
+            .sidenav-block {
+                padding-left: $main-padding;
+            }
+            &__top {
+                @include py(30px);
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 background: #fff;
                 span {
                     font-size: $fz_medium;
                     font-weight: $fw_Bold;
                 }
+                img {
+                    height: 90px;
+                    width: 70px;
+                }
 
             }
+            &__switchers {
+                display: flex;
+                align-items: center;
+                @include py(15px);
+                .sidenav-switcher {
+                    font-size: $fz_xsmall;
+                    font-weight: $fw_SemiBold;
+                    color: #000;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        margin-right: 10px;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        color: $red;
+                        @include transition(0.4s);
+                    }
+                    &:nth-child(2){
+                        @include mx(30px);
+                    }
+                }
+
+            }
+            &__filters {
+                display: flex;
+                flex-direction: column;
+                @include py(70px);
+            }
         }
-        .office-content {
+        .jobin-content {
             margin-left: 26.0416666667vw;
             &__call2action {
                 height: 50px;
                 background: #fff;
+                position: fixed;
+                top: 90px;
+                width: 100%;
                 span {
                     font-size: $fz_xsmall;
                     font-weight: $fw_SemiBold;
