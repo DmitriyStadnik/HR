@@ -293,9 +293,15 @@ h1 {
 }
 
 
-.cities-dropdown {
+.dropdown {
     position: relative;
     display: flex;
+    .current-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #E64415;
+        text-decoration: none;
+    }
     &__content {
         display: none;
         @include transition(0.4s);
@@ -313,14 +319,13 @@ h1 {
         @include respond-to (small) {
             width: 60vw;
             height: 900%;
-
         }
         .dropdown__content--wrapper {
             flex-direction: column;
             overflow-y: scroll;
             padding-right: 20px;
             display: flex;
-            .cities-dropdown__link {
+            .dropdown__link {
                 color: #000 !important;
                 font-weight: $fw_Regular !important;
                 font-size: $fz_xsmall !important;
@@ -379,7 +384,7 @@ main {
                 width: 70vw;
                 height: 65vh;
                 padding-left: 11%;
-                margin-top: 15;
+                margin-top: 15px;
             }
         }
     }
@@ -816,7 +821,6 @@ main {
         flex-direction: column;
         align-items: center;
         &__frames {
-            margin-top: 50px;
             display: flex;
             align-items: center;
             width: 100%;
@@ -947,8 +951,8 @@ main {
 .jobin{
     background: $crema;
     margin-top: 90px;
-    height: 100vh;
-    margin-left: 0;
+    @include mx(0);
+    padding-right: 5.20833vw;
     &-wrapper {
         .jobin-sidenav {
             position: fixed;
@@ -971,6 +975,7 @@ main {
                 img {
                     height: 90px;
                     width: 70px;
+                    margin-right: 20px;
                 }
 
             }
@@ -1002,11 +1007,81 @@ main {
             &__filters {
                 display: flex;
                 flex-direction: column;
-                @include py(70px);
+                background: #fff;
+                @include py(50px);
+                .filter-row {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 30px;
+                    .only-hot__txt {
+                        color: $gray;
+                        font-weight: $fw_SemiBold;
+                    }
+                    .sidenav-filter--plain {
+                        font-size: $fz_medium;
+                        font-weight: $fw_Regular;
+                        margin-right: 10px;
+                    }
+                }
+                
+            }
+            &__chosen {
+                @include py(30px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 5.20833vw;
+                .chosen-header{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    span {
+                        font-size: $fz_medium;
+                        font-weight: $fw_SemiBold;
+                    }
+                    a{
+                        text-decoration: underline;
+                        color: $red;
+                        font-size: $fz_xsmall;
+                        font-weight: $fw_SemiBold;
+                    }
+                }
+                .chosen-tiles{
+                    display: flex;
+                    align-items: stretch;
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                    @include py(10px);
+                    &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
+                        border-radius: 100px;
+                        width: 2px!important;
+                    }
+                    &__tile {
+                        padding: 20px;
+                        @include mx(20px);  
+                        @include shadow();
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 130px;
+                        height: 130px;
+                        flex-shrink: 0;
+                        img {
+                            width: 65%;
+                            border-radius: 50%;
+                        }
+                        span {
+                            text-align: center;
+                        }
+
+                    }
+                }
             }
         }
         .jobin-content {
             margin-left: 26.0416666667vw;
+            padding-top: 80px;
             &__call2action {
                 height: 50px;
                 background: #fff;
@@ -1017,6 +1092,85 @@ main {
                     font-size: $fz_xsmall;
                     font-weight: $fw_SemiBold;
                     color: $gray;
+                }
+            }
+            .vacancies-row {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 30px;
+                .vacancy {
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 29.291667vw;
+                    background: #fff;
+                    margin-bottom:1.5625vw;
+                    &:nth-child(odd) {
+                        margin-right: 1.5625vw;
+                    }
+                    &-header {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 30px;
+                        &__leftside {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                margin-right: 20px;
+                                width: 5.20833333vw;
+                            }
+
+                        }
+                        &__rightside {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            .vacancy-address {
+                                font-size: 20px;
+                                font-weight: $fw_SemiBold;
+                            }
+                            .vacancy-city {
+                                font-size: $fz_small;
+                                font-weight: $fw_Regular;
+                            }    
+                        }
+                    }
+                    &-body {
+                        margin-bottom: 50px;
+                        display: flex;
+                        align-items: flex-start;
+                        &__leftside {
+                            span {
+                                font-size: 20px;
+                                font-weight: $fw_SemiBold;
+                            }
+                        }
+                        &__rightside {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            padding-top: 4px;
+                            .vacancy__position {
+                                font-size: $fz_small;
+                                display: flex;
+                                font-weight: $fw_SemiBold;
+                                @include mx(10px);
+                                color: #000;
+                            }
+                            .vacancy__position--hot{
+                                color: $red;
+                            }
+                        }
+                    }
+                    &-footer{
+                        display: flex;
+                        width: 100%;
+                        .vacancy__action{
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
                 }
             }
         }

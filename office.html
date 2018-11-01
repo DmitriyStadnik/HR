@@ -8,10 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/positioning.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/node_modules/pretty-checkbox/dist/pretty-checkbox.min.css">
     <!-- <link rel="stylesheet" href="css/slick-theme.css"> -->
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous"> 
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,21 +26,21 @@
             <a href="#" class="header_link logo__wrapper">
                 <img src="/img/logo.svg" alt="" class="header__logo">
             </a>
-            <div class="cities-dropdown">
+            <div class="dropdown">
                 <a href="#" class="header__location header_link hide_on_sm ">
                     <i class="fas fa-map-marker-alt"></i>
                     <span class="current-city">Київ</span>
                     <i class="fas fa-angle-down"></i>
                 </a>
-                <div class="header-cities cities-dropdown__content">
+                <div class="header-cities dropdown__content">
                     <div class="dropdown__content--wrapper">
-                        <a href="#" class="cities-dropdown__link">Вінниця</a>
-                        <a href="#" class="cities-dropdown__link">Херсон</a>
-                        <a href="#" class="cities-dropdown__link">Чернігів</a>
-                        <a href="#" class="cities-dropdown__link">Харків</a>
-                        <a href="#" class="cities-dropdown__link">Івано-Франківськ</a>
-                        <a href="#" class="cities-dropdown__link">Миколаїв</a>
-                        <a href="#" class="cities-dropdown__link">Луцьк</a>
+                        <a href="#" class="dropdown__link">Вінниця</a>
+                        <a href="#" class="dropdown__link">Херсон</a>
+                        <a href="#" class="dropdown__link">Чернігів</a>
+                        <a href="#" class="dropdown__link">Харків</a>
+                        <a href="#" class="dropdown__link">Івано-Франківськ</a>
+                        <a href="#" class="dropdown__link">Миколаїв</a>
+                        <a href="#" class="dropdown__link">Луцьк</a>
                     </div>
                 </div>
             </div>
@@ -88,19 +89,286 @@
                     <a href="#" class="sidenav-switcher"><i class="fas fa-subway"></i>Метро</a>
                 </div>
                 <div class="jobin-sidenav__filters sidenav-block">
-                    
+                    <div class="filter-row">
+                        <span class="sidenav-filter--plain">Хочу працювати в</span>
+                        <div class="jobs-needed__dropdown">
+                            <div class="dropdown">
+                                <a href="#" class="current-value">
+                                    <span class="">м. Київ</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </a>
+                                <div class="dropdown__content">
+                                    <div class="dropdown__content--wrapper">
+                                        <a href="#" class="dropdown__link">Вінниця</a>
+                                        <a href="#" class="dropdown__link">Херсон</a>
+                                        <a href="#" class="dropdown__link">Чернігів</a>
+                                        <a href="#" class="dropdown__link">Харків</a>
+                                        <a href="#" class="dropdown__link">Івано-Франківськ</a>
+                                        <a href="#" class="dropdown__link">Миколаїв</a>
+                                        <a href="#" class="dropdown__link">Луцьк</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-row">
+                        <span class="sidenav-filter--plain">Хочу бути</span>
+                        <div class="jobs-needed__dropdown">
+                            <div class="dropdown">
+                                <a href="#" class="current-value">
+                                    <span class="">Оберіть професію</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </a>
+                                <div class="dropdown__content">
+                                    <div class="dropdown__content--wrapper">
+                                        <a href="#" class="dropdown__link">Прибиральником</a>
+                                        <a href="#" class="dropdown__link">Звільненим</a>
+                                        <a href="#" class="dropdown__link">Не працевлаштованним</a>
+                                        <a href="#" class="dropdown__link">Программістром системним</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-row">
+                        <form action="#">
+                            <div class="pretty p-default p-round">
+                                <input type="checkbox">
+                                <div class="state p-danger-o">
+                                    <label class="only-hot__txt">Тільки гарячі вакансії</label>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
+                <!-- <div class="jobin-sidenav__chosen sidenav-block">
+                    <div class="chosen-header">
+                        <span>Ви обрали 2 магазини</span>
+                        <a href="#" class="chosen__clear">Очистити</a>
+                    </div>
+                    <div class="chosen-tiles">
+                        <div class="chosen-tiles__tile">
+                            <img src="/img/Hero_img.svg" alt="">
+                            <span>просп. Степана Бандери, 23</span>
+                        </div>
+                        <div class="chosen-tiles__tile">
+                            <img src="/img/Hero_img.svg" alt="">
+                            <span>просп. Степана Бандери, 23</span>
+                        </div>
+                        <div class="chosen-tiles__tile">
+                            <img src="/img/Hero_img.svg" alt="">
+                            <span>просп. Степана Бандери, 23</span>
+                        </div>
+                        <div class="chosen-tiles__tile">
+                            <img src="/img/Hero_img.svg" alt="">
+                            <span>просп. Степана Бандери, 23</span>
+                        </div>
+                        <div class="chosen-tiles__tile">
+                            <img src="/img/Hero_img.svg" alt="">
+                            <span>просп. Степана Бандери, 23</span>
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div class="jobin-content">
                 <div class="jobin-content__call2action">
                     <span>Оберіть магазини в які бажаєте надіслати анкету/резюме</span>
+                </div>
+                <div class="vacancies-row">
+                    <div class="vacancy">
+                        <div class="vacancy-header">
+                            <div class="vacancy-header__leftside">
+                                <img src="/img/Hero_img.svg" alt="">
+                            </div>
+                            <div class="vacancy-header__rightside">
+                                <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                <span class="vacancy-city">м. Київ</span>
+                            </div>
+
+                        </div>
+                        <div class="vacancy-body">
+                            <div class="vacancy-body__leftside">
+                                <span>Вакансії:</span>
+                            </div>
+                            <div class="vacancy-body__rightside">
+                                <a href="#" class="vacancy__position">Прибиральник</a>
+                                <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                <a href="#" class="vacancy__position">Продавець</a>
+                                <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                <a href="#" class="vacancy__position">Программіст</a>
+                                <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+
+                            </div>
+                        </div>
+                        <div class="vacancy-footer">
+                            <a href="#" class="vacancy__action pill_button pill_button--light">
+                                Обрати магазин
+                            </a>
+                        </div>
+                    </div>
+                    <div class="vacancy">
+                            <div class="vacancy-header">
+                                <div class="vacancy-header__leftside">
+                                    <img src="/img/Hero_img.svg" alt="">
+                                </div>
+                                <div class="vacancy-header__rightside">
+                                    <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                    <span class="vacancy-city">м. Київ</span>
+                                </div>
+    
+                            </div>
+                            <div class="vacancy-body">
+                                <div class="vacancy-body__leftside">
+                                    <span>Вакансії:</span>
+                                </div>
+                                <div class="vacancy-body__rightside">
+                                    <a href="#" class="vacancy__position">Прибиральник</a>
+                                    <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                    <a href="#" class="vacancy__position">Продавець</a>
+                                    <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                    <a href="#" class="vacancy__position">Программіст</a>
+                                    <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+    
+                                </div>
+                            </div>
+                            <div class="vacancy-footer">
+                                <a href="#" class="vacancy__action pill_button pill_button--light">
+                                    Обрати магазин
+                                </a>
+                            </div>
+                        </div>
+                        <div class="vacancy">
+                                <div class="vacancy-header">
+                                    <div class="vacancy-header__leftside">
+                                        <img src="/img/Hero_img.svg" alt="">
+                                    </div>
+                                    <div class="vacancy-header__rightside">
+                                        <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                        <span class="vacancy-city">м. Київ</span>
+                                    </div>
+        
+                                </div>
+                                <div class="vacancy-body">
+                                    <div class="vacancy-body__leftside">
+                                        <span>Вакансії:</span>
+                                    </div>
+                                    <div class="vacancy-body__rightside">
+                                        <a href="#" class="vacancy__position">Прибиральник</a>
+                                        <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                        <a href="#" class="vacancy__position">Продавець</a>
+                                        <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                        <a href="#" class="vacancy__position">Программіст</a>
+                                        <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+        
+                                    </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                    <a href="#" class="vacancy__action pill_button pill_button--light">
+                                        Обрати магазин
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="vacancy">
+                                    <div class="vacancy-header">
+                                        <div class="vacancy-header__leftside">
+                                            <img src="/img/Hero_img.svg" alt="">
+                                        </div>
+                                        <div class="vacancy-header__rightside">
+                                            <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                            <span class="vacancy-city">м. Київ</span>
+                                        </div>
+            
+                                    </div>
+                                    <div class="vacancy-body">
+                                        <div class="vacancy-body__leftside">
+                                            <span>Вакансії:</span>
+                                        </div>
+                                        <div class="vacancy-body__rightside">
+                                            <a href="#" class="vacancy__position">Прибиральник</a>
+                                            <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                            <a href="#" class="vacancy__position">Продавець</a>
+                                            <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                            <a href="#" class="vacancy__position">Программіст</a>
+                                            <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+            
+                                        </div>
+                                    </div>
+                                    <div class="vacancy-footer">
+                                        <a href="#" class="vacancy__action pill_button pill_button--light">
+                                            Обрати магазин
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vacancy">
+                                        <div class="vacancy-header">
+                                            <div class="vacancy-header__leftside">
+                                                <img src="/img/Hero_img.svg" alt="">
+                                            </div>
+                                            <div class="vacancy-header__rightside">
+                                                <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                                <span class="vacancy-city">м. Київ</span>
+                                            </div>
+                
+                                        </div>
+                                        <div class="vacancy-body">
+                                            <div class="vacancy-body__leftside">
+                                                <span>Вакансії:</span>
+                                            </div>
+                                            <div class="vacancy-body__rightside">
+                                                <a href="#" class="vacancy__position">Прибиральник</a>
+                                                <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                                <a href="#" class="vacancy__position">Продавець</a>
+                                                <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                                <a href="#" class="vacancy__position">Программіст</a>
+                                                <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                
+                                            </div>
+                                        </div>
+                                        <div class="vacancy-footer">
+                                            <a href="#" class="vacancy__action pill_button pill_button--light">
+                                                Обрати магазин
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="vacancy">
+                                            <div class="vacancy-header">
+                                                <div class="vacancy-header__leftside">
+                                                    <img src="/img/Hero_img.svg" alt="">
+                                                </div>
+                                                <div class="vacancy-header__rightside">
+                                                    <span class="vacancy-address">просп. Степана Бандери, 23</span>
+                                                    <span class="vacancy-city">м. Київ</span>
+                                                </div>
+                    
+                                            </div>
+                                            <div class="vacancy-body">
+                                                <div class="vacancy-body__leftside">
+                                                    <span>Вакансії:</span>
+                                                </div>
+                                                <div class="vacancy-body__rightside">
+                                                    <a href="#" class="vacancy__position">Прибиральник</a>
+                                                    <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                                                    <a href="#" class="vacancy__position">Продавець</a>
+                                                    <a href="#" class="vacancy__position vacancy__position--hot">Менеджер</a>
+                                                    <a href="#" class="vacancy__position">Программіст</a>
+                                                    <a href="#" class="vacancy__position vacancy__position--hot">Касир</a>
+                    
+                                                </div>
+                                            </div>
+                                            <div class="vacancy-footer">
+                                                <a href="#" class="vacancy__action pill_button pill_button--light">
+                                                    Обрати магазин
+                                                </a>
+                                            </div>
+                                        </div>
                 </div>
             </div>
         </div>
 
 
     </main>
-<!-- 
+    <!-- 
     <div class="footer">
         <img src="/img/logo.svg" alt="" class="footer__logo">
         <div class="footer__links">
