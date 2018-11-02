@@ -5,20 +5,20 @@
 ////////////////////////////////// MAIN PAGE START //////////////////////////////////
 
 
-::-webkit-scrollbar {
-    width: 7px; 
-    background: transparent;
-    @include respond-to(small) {
-        width: 0;
-    }
-}
-::-webkit-scrollbar-thumb{
-    background: $red;
-    border-radius: 40px;
-    @include respond-to(small) {
-        width: 0;
-    }
-}
+// ::-webkit-scrollbar {
+//     width: 7px; 
+//     background: transparent;
+//     @include respond-to(small) {
+//         width: 0;
+//     }
+// }
+// ::-webkit-scrollbar-thumb{
+//     background: $red;
+//     border-radius: 40px;
+//     @include respond-to(small) {
+//         width: 0;
+//     }
+// }
 *  { 
     margin: 0; 
     padding: 0; 
@@ -301,6 +301,9 @@ h1 {
         font-weight: 600;
         color: #E64415;
         text-decoration: none;
+        @include respond-to(xxxlarge){
+            font-size: $fz_small;
+        }
     }
     &__content {
         display: none;
@@ -309,7 +312,6 @@ h1 {
         top: 100%;
         left: -5px;
         height: 1050%;
-        overflow-y: scroll;
         @include shadow();
         opacity: 0;
         padding: 20px;
@@ -340,10 +342,10 @@ h1 {
                     text-decoration: none;
                 }
             }
-            &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
-                border-radius: 20px;
-                width: 5px;
-            }
+            // &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
+            //     border-radius: 20px;
+            //     width: 5px;
+            // }
 
         }
         
@@ -952,22 +954,37 @@ main {
     background: $crema;
     margin-top: 90px;
     @include mx(0);
-    padding-right: 5.20833vw;
+    // padding-right: 5.20833vw;
     &-wrapper {
+        @include respond-to(xlarge) {
+            display: flex;
+            flex-direction: column;
+        }
         .jobin-sidenav {
             position: fixed;
             top: 90px;
             width: 26.0416666667vw;
             display: flex;
             flex-direction: column;
+            @include respond-from-to(xlarge,xxxlarge) {
+                width: 32vw;
+            }
             .sidenav-block {
                 padding-left: $main-padding;
+            }
+            @include respond-to (xlarge) {
+                position: relative;
+                width: 100vw;
+                top: 0;
             }
             &__top {
                 @include py(30px);
                 display: flex;
                 align-items: center;
                 background: #fff;
+                @include respond-to(small) {
+                    padding-left: 0;
+                }
                 span {
                     font-size: $fz_medium;
                     font-weight: $fw_Bold;
@@ -983,10 +1000,13 @@ main {
                 display: flex;
                 align-items: center;
                 @include py(15px);
+                .sidenav-switcher--active {
+                    color: #000!important;
+                }
                 .sidenav-switcher {
                     font-size: $fz_xsmall;
                     font-weight: $fw_SemiBold;
-                    color: #000;
+                    color: $gray;
                     text-decoration: none;
                     display: flex;
                     align-items: center;
@@ -1008,11 +1028,14 @@ main {
                 display: flex;
                 flex-direction: column;
                 background: #fff;
-                @include py(50px);
+                @include py(30px);
                 .filter-row {
                     display: flex;
                     align-items: center;
                     margin-bottom: 30px;
+                    &:nth-last-child(1){
+                        margin-bottom: 0;
+                    }
                     .only-hot__txt {
                         color: $gray;
                         font-weight: $fw_SemiBold;
@@ -1021,6 +1044,14 @@ main {
                         font-size: $fz_medium;
                         font-weight: $fw_Regular;
                         margin-right: 10px;
+                        @include respond-to(xlarge) {
+                            font-size: $fz_small;
+                            margin-right: 5px;
+                        }
+                        @include respond-from-to(xlarge,xxlarge){
+                            font-size: $fz_small;
+                            margin-right: 5px;
+                        }
                     }
                 }
                 
@@ -1039,6 +1070,9 @@ main {
                     span {
                         font-size: $fz_medium;
                         font-weight: $fw_SemiBold;
+                        @include respond-from-to(xlarge, xxxlarge) {
+                            font-size: $fz_small;
+                        }
                     }
                     a{
                         text-decoration: underline;
@@ -1048,46 +1082,69 @@ main {
                     }
                 }
                 .chosen-tiles{
+                    width: 100%;
                     display: flex;
-                    align-items: stretch;
+                    align-items: center;
                     flex-wrap: nowrap;
-                    overflow-x: scroll;
-                    @include py(10px);
-                    &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
-                        border-radius: 100px;
-                        width: 2px!important;
-                    }
-                    &__tile {
-                        padding: 20px;
-                        @include mx(20px);  
-                        @include shadow();
+                    overflow-x: auto;
+                    padding: 30px;
+                    padding-left: 0;
+                    &__tile{
+                        background: #fff;
+                        flex-shrink: 0;
                         display: flex;
+                        @include shadow();
                         flex-direction: column;
                         align-items: center;
-                        width: 130px;
-                        height: 130px;
-                        flex-shrink: 0;
-                        img {
-                            width: 65%;
-                            border-radius: 50%;
+                        @include py(30px);
+                        @include px(10px);
+                        width: 150px;
+                        margin-right: 30px;
+                        @include respond-to (small){
+                            width: 38vw;
                         }
-                        span {
+                        .chosen-tile__img{
+                            width: 4vw;
+                            margin-bottom: 20px;
+                            @include respond-to(small){
+                                width: 25vw;
+                            }
+                        }
+                        .chosen-tile__address{
+                            font-size: $fz_xsmall;
+                            font-weight: $fw_Bold;
                             text-align: center;
                         }
-
                     }
                 }
+
+
             }
         }
         .jobin-content {
             margin-left: 26.0416666667vw;
             padding-top: 80px;
+            @include respond-to(xlarge) {
+                margin: 0;
+                padding-top: 20px;
+            }
+            @include respond-from-to(xlarge,xxxlarge) {
+                margin-left: 32vw;
+            }
             &__call2action {
                 height: 50px;
                 background: #fff;
                 position: fixed;
                 top: 90px;
                 width: 100%;
+                @include px(5px);
+                @include respond-to (small) {
+                    top: 65px
+                }
+                @include respond-to (xlarge) {
+                    display: flex;
+                    justify-content: center;
+                }
                 span {
                     font-size: $fz_xsmall;
                     font-weight: $fw_SemiBold;
@@ -1098,13 +1155,32 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 padding-left: 30px;
+                @include respond-to(xlarge){
+                    padding-left: 0;
+                }
+                @include respond-to(small){
+                    flex-direction: column;
+                }
                 .vacancy {
                     padding: 30px;
                     display: flex;
                     flex-direction: column;
-                    width: 29.291667vw;
+                    width: 28vw;
                     background: #fff;
                     margin-bottom:1.5625vw;
+                    @include respond-to(small) {
+                        width: calc(100vw - 60px);
+                        margin-right: 0;
+                        margin-bottom: 3vw;
+                    }
+                    @include respond-from-to(small, xlarge) {
+                        width: calc(49vw - 60px);
+                        margin-right: 0;
+                        margin-bottom:  1.5625vw;
+                    }
+                    @include respond-from-to(xlarge, xxxlarge) {
+                        width: 26vw;
+                    }
                     &:nth-child(odd) {
                         margin-right: 1.5625vw;
                     }
@@ -1118,6 +1194,9 @@ main {
                             img {
                                 margin-right: 20px;
                                 width: 5.20833333vw;
+                                @include respond-to(xlarge){
+                                    width: 18.66666vw;
+                                }
                             }
 
                         }
@@ -1128,10 +1207,19 @@ main {
                             .vacancy-address {
                                 font-size: 20px;
                                 font-weight: $fw_SemiBold;
+                                @include respond-to(xlarge) {
+                                    font-size: $fz_small;
+                                }
+                                @include respond-from-to (xlarge,xxxlarge) {
+                                    font-size: $fz_medium;
+                                }
                             }
                             .vacancy-city {
                                 font-size: $fz_small;
                                 font-weight: $fw_Regular;
+                                @include respond-to (xlarge) {
+                                    display: none;
+                                }
                             }    
                         }
                     }
@@ -1140,22 +1228,46 @@ main {
                         display: flex;
                         align-items: flex-start;
                         &__leftside {
-                            span {
-                                font-size: 20px;
+                            @include respond-to(xlarge) {
+                                margin-right: 5px;
+                            }
+                            .vbl-text {
+                                font-size: $fz_small;
+                                font-weight: $fw_ExtraBold;
+                                @include respond-to (xlarge){
+                                    display: none;
+                                }
+                            }
+                            .vbl-text--mobile {
+                                display: none;
+                                font-size: $fz_medium;
                                 font-weight: $fw_SemiBold;
+                                @include respond-to(xlarge){
+                                    display: block;
+                                }
+                            }
+                            .vbl-text--hot {
+                                @include respond-to(xlarge) {
+                                    text-decoration: underline;
+                                    color: $red;
+                                    display: flex;
+                                    align-items: center;
+                                }                            
                             }
                         }
                         &__rightside {
                             display: flex;
                             align-items: center;
                             flex-wrap: wrap;
-                            padding-top: 4px;
                             .vacancy__position {
                                 font-size: $fz_small;
                                 display: flex;
                                 font-weight: $fw_SemiBold;
                                 @include mx(10px);
                                 color: #000;
+                                @include respond-to(xlarge){
+                                    display: none;
+                                }
                             }
                             .vacancy__position--hot{
                                 color: $red;

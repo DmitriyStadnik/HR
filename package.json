@@ -1,0 +1,25 @@
+{
+  "name": "hr",
+  "version": "1.0.0",
+  "description": "hr site",
+  "main": "index.js",
+  "dependencies": {
+    "perfect-scrollbar": "^1.4.0",
+    "pretty-checkbox": "^3.0.3",
+    "simplebar-2.6.1": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriyStadnik/HR.git"
+  },
+  "author": "Stadnik D.V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriyStadnik/HR/issues"
+  },
+  "homepage": "https://github.com/DmitriyStadnik/HR#readme"
+}

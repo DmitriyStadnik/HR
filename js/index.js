@@ -1,4 +1,4 @@
-$(window).ready(function(){
+$(document).ready(function(){
     $('.top-slider__tiles').css('opacity','1').slick({
         infinite: true,
         slidesToShow: 4,
@@ -163,7 +163,6 @@ $(window).ready(function(){
         let content = $(this).find('.dropdown__content');
         if ( !$(content).hasClass('dropdown__content--open')) {
             $('.main').css('margin-right','calc(5.20833vw + 10000px)');
-
             $(content).addClass ('dropdown__content--open');
             // $('body').css('overflow-y','hidden');
             // if (screen.width > 768)
