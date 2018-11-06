@@ -5,20 +5,20 @@
 ////////////////////////////////// MAIN PAGE START //////////////////////////////////
 
 
-// ::-webkit-scrollbar {
-//     width: 7px; 
-//     background: transparent;
-//     @include respond-to(small) {
-//         width: 0;
-//     }
-// }
-// ::-webkit-scrollbar-thumb{
-//     background: $red;
-//     border-radius: 40px;
-//     @include respond-to(small) {
-//         width: 0;
-//     }
-// }
+::-webkit-scrollbar {
+    width: 7px; 
+    background: transparent;
+    @include respond-to(small) {
+        width: 0;
+    }
+}
+::-webkit-scrollbar-thumb{
+    background: $red;
+    border-radius: 40px;
+    @include respond-to(small) {
+        width: 0;
+    }
+}
 *  { 
     margin: 0; 
     padding: 0; 
@@ -1158,8 +1158,9 @@ main {
                 @include respond-to(xlarge){
                     padding-left: 0;
                 }
-                @include respond-to(small){
+                @include respond-to(medium){
                     flex-direction: column;
+                    align-items: center;
                 }
                 .vacancy {
                     padding: 30px;
@@ -1168,15 +1169,25 @@ main {
                     width: 28vw;
                     background: #fff;
                     margin-bottom:1.5625vw;
-                    @include respond-to(small) {
-                        width: calc(100vw - 60px);
-                        margin-right: 0;
-                        margin-bottom: 3vw;
+                    width: calc(35vw - 60px);
+                    margin-right: 0;
+                    margin-bottom: 3vw;
+                    @include shadow();
+                    @include respond-to (small) {
+                        width: calc(95vw - 60px);
+                        margin-right: 0 !important;
+                        margin-bottom: 10vw;
+                        
                     }
-                    @include respond-from-to(small, xlarge) {
-                        width: calc(49vw - 60px);
+                    @include respond-from-to(small,medium) {
+                        width: 80vw;
                         margin-right: 0;
-                        margin-bottom:  1.5625vw;
+                        margin-bottom: 5vw;
+                    }
+                    @include respond-from-to(medium, xlarge) {
+                        width: calc(48vw - 60px);
+                        margin-right: 0;
+                        margin-bottom: 1.5625vw;
                     }
                     @include respond-from-to(xlarge, xxxlarge) {
                         width: 26vw;
@@ -1188,15 +1199,17 @@ main {
                         display: flex;
                         align-items: center;
                         margin-bottom: 30px;
+                        
                         &__leftside {
                             display: flex;
                             align-items: center;
                             img {
                                 margin-right: 20px;
                                 width: 5.20833333vw;
-                                @include respond-to(xlarge){
-                                    width: 18.66666vw;
+                                @include respond-from-to(medium, xlarge) {
+                                    width: 10vw;
                                 }
+            
                             }
 
                         }

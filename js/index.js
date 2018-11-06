@@ -164,18 +164,17 @@ $(document).ready(function(){
         if ( !$(content).hasClass('dropdown__content--open')) {
             $('.main').css('margin-right','calc(5.20833vw + 10000px)');
             $(content).addClass ('dropdown__content--open');
-            // $('body').css('overflow-y','hidden');
-            // if (screen.width > 768)
-            // $('main').css('margin-right','calc(5.20833vw + 700px)');
 
         }
         else {
             $(content).removeClass('dropdown__content--open');
             $('body').css('overflow-y','');
-            // if (screen.width > 768)
-            // $('.main').css('margin-right','5.20833vw');
         }
     })
+
+    // $('.dropdown__content').optiscroll({
+    //     wrapContent: false,
+    // });
 
 
 })

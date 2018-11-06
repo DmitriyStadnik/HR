@@ -4,6 +4,7 @@
   "description": "hr site",
   "main": "index.js",
   "dependencies": {
+    "optiscroll": "^3.2.1",
     "perfect-scrollbar": "^1.4.0",
     "pretty-checkbox": "^3.0.3",
     "simplebar-2.6.1": "^2.6.1"
