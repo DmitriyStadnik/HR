@@ -689,6 +689,10 @@ h1 {
   .dropdown__content {
     width: 60vw;
     height: 900%;
+    left: -50%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 

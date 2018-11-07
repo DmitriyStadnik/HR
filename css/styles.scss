@@ -321,6 +321,8 @@ h1 {
         @include respond-to (small) {
             width: 60vw;
             height: 900%;
+            left:-50%;
+            width: fit-content;
         }
         .dropdown__content--wrapper {
             flex-direction: column;
@@ -358,6 +360,12 @@ h1 {
         z-index: 1;
         @include transition(0.4s);
     }
+    // .drop-cont-office {
+    //     @include respond-to(small) {
+    //         left:-50%;
+    //         width: fit-content;
+    //     }
+    // }
 }
 
 main {
