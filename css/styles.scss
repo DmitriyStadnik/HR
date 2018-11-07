@@ -975,10 +975,9 @@ main {
             @include respond-to (xlarge) {
                 position: relative;
                 width: 100vw;
-                top: 0;
+                top: 50px;
             }
             &__top {
-                @include py(30px);
                 display: flex;
                 align-items: center;
                 background: #fff;
@@ -1118,7 +1117,57 @@ main {
                     }
                 }
 
+                #test {
+                    &::-webkit-scrollbar {
+                        height: 7px;
+                       }
+                     
+                    &::-webkit-scrollbar-thumb {
+                        background-color:$red;
+                        border-radius: 3px;
+                       }
+                }
+                 
 
+
+            }
+            &__confirm {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                padding-right: 5.20833vw;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                @include respond-to(small) {
+                    position: fixed;
+                    bottom: -50px !important;
+                    padding-left: 0 !important;
+                    background: transparent;
+                    width: 100vw;
+                }
+                @include respond-from-to(small,large){
+                    padding-top: 4vw;
+                    padding-bottom: 4vw;
+                }
+                a{
+                    width: 100%;
+                    text-align: center;
+                    @include respond-to(small) {
+                        width: 80%;
+                    }
+                    @include respond-from-to(small,medium){
+                        width: 65%;
+                    }
+                    @include respond-from-to(medium,large) {
+                        width: 40%;
+                    }
+                    @include respond-from-to(large,xlarge){
+                        width: 40%;
+                    }
+                    @include respond-from (xlarge) {
+                        width: 100%;
+                    }
+                }
             }
         }
         .jobin-content {
@@ -1126,7 +1175,7 @@ main {
             padding-top: 80px;
             @include respond-to(xlarge) {
                 margin: 0;
-                padding-top: 20px;
+                padding-top: 100px;
             }
             @include respond-from-to(xlarge,xxxlarge) {
                 margin-left: 32vw;
@@ -1181,16 +1230,24 @@ main {
                     }
                     @include respond-from-to(small,medium) {
                         width: 80vw;
-                        margin-right: 0;
+                        margin-right: 0 !important;
                         margin-bottom: 5vw;
                     }
                     @include respond-from-to(medium, xlarge) {
-                        width: calc(48vw - 60px);
-                        margin-right: 0;
+                        width: calc(48vw - 60px + 0.5vw);
                         margin-bottom: 1.5625vw;
+                        margin-left: 0.5vw !important;
+                        margin-right: 0.5vw !important;
                     }
                     @include respond-from-to(xlarge, xxxlarge) {
                         width: 26vw;
+                    }
+                    @include respond-from (huge) {
+                        width: calc(22vw - 60px);
+                        margin-right: 1.5625vw ;
+                        &:nth-child(3n){
+                            margin-right: 0!important;
+                        }
                     }
                     &:nth-child(odd) {
                         margin-right: 1.5625vw;
@@ -1209,7 +1266,6 @@ main {
                                 @include respond-from-to(medium, xlarge) {
                                     width: 10vw;
                                 }
-            
                             }
 
                         }
